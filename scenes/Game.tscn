@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://sdt7fdu21pch"]
+
+[ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/grid.png" id="1_3tswr"]
+[ext_resource type="PackedScene" uid="uid://8jleudwdgv85" path="res://scenes/Display.tscn" id="2_3wcbp"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_q18w1"]
+[ext_resource type="Script" path="res://scripts/cell.gd" id="4_xkjaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ves35"]
+size = Vector2(123, 123)
+
+[node name="Game" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -224.0
+offset_right = 224.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3tswr")
+
+[node name="Display" parent="CanvasLayer" groups=["display"] instance=ExtResource("2_3wcbp")]
+position = Vector2(198, 115)
+scale = Vector2(5, 5)
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("3_q18w1")
+
+[node name="Cell" type="Area2D" parent="GameManager"]
+script = ExtResource("4_xkjaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Cell"]
+position = Vector2(485.5, 205.5)
+shape = SubResource("RectangleShape2D_ves35")
