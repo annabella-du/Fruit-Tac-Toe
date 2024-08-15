@@ -14,6 +14,10 @@ config/name="TicTacToe"
 run/main_scene="res://scenes/Game.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [display]
 
 window/size/viewport_width=1280

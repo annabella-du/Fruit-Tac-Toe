@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj6w5j6p333c2"]
+
+[ext_resource type="Texture2D" uid="uid://c8l86b7jrdy7" path="res://assets/regular_button.png" id="1_aw4u1"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="1_x2xgf"]
+[ext_resource type="Texture2D" uid="uid://cipbohvf14sr4" path="res://assets/hovered_button.png" id="2_ksiw2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73m6p"]
+texture = ExtResource("1_aw4u1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chqqh"]
+texture = ExtResource("2_ksiw2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd4nq"]
+texture = ExtResource("2_ksiw2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq7t1"]
+
+[node name="Button" type="Button"]
+offset_right = 128.0
+offset_bottom = 128.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_73m6p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_chqqh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vd4nq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wq7t1")
+script = ExtResource("1_x2xgf")
+
+[node name="Player1Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 112.0
+
+[node name="Player2Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 112.0
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
