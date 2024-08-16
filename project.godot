@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TicTacToe"
-run/main_scene="res://scenes/Game.tscn"
+run/main_scene="res://scenes/2Players.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
@@ -28,3 +28,4 @@ window/size/viewport_height=720
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.72549, 0.568627, 0.478431, 1)

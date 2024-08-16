@@ -20,5 +20,6 @@ func _on_pressed():
 			player1_texture.visible = true
 		elif gm.active_player == 2:
 			player2_texture.visible = true
-		blank = false
-		gm.turn(id)
+		if gm.active_player != 0:
+			blank = false
+			gm.turn(id)

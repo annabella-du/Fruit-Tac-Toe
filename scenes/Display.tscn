@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/display.gd" id="2_tdqb0"]
 [ext_resource type="Texture2D" uid="uid://b4ebn1w2gjuhe" path="res://assets/outline.png" id="3_ornym"]
 
-[node name="Display" type="TextureRect"]
+[node name="Display" type="TextureRect" groups=["display"]]
 offset_right = 168.0
 offset_bottom = 112.0
 texture = ExtResource("1_aqhor")

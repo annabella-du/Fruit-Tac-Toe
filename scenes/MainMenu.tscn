@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtqm81ysfyftk"]
+
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/main_menu/title.png" id="1_dshtn"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="2_e5vtp"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_l564g"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -452.0
+offset_top = -192.0
+offset_right = 452.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dshtn")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -40.5
+offset_right = 428.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_l564g")
+theme_override_font_sizes/font_size = 80
+text = "Fruit-Tac-Toe"
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -16.0
+offset_right = 192.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e5vtp")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e5vtp")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 208.0
+offset_right = 192.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e5vtp")
