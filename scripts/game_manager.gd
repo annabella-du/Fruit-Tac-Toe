@@ -50,13 +50,15 @@ func turn(id : int):
 	
 	#check to see if active player won
 	if won(active_player):
-		print("Player " + str(active_player) + " won!")
+		global.result = active_player
 		active_player = 0
+		global.load_scene("game_over")
 	
 	#check for tie
-	if tie():
+	if tie() and active_player != 0:
 		active_player = 0
-		print("Tie!")
+		global.result = 0
+		global.load_scene("game_over")
 	
 	#switch active player
 	if active_player == 1:

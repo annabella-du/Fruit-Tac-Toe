@@ -1,14 +1,16 @@
 extends Node
 
-### TEST VARIABLES ###
-var p1 = "blueberry"
-var p2 = "strawberry"
+var p1 : String
+var p2 : String
+var result : int
 
 #scenes to load
 var two_players = "res://scenes/TwoPlayers.tscn"
 var main_menu = "res://scenes/MainMenu.tscn"
 var instructions = "res://scenes/Instructions.tscn"
 var select_icon = "res://scenes/SelectIcon.tscn"
+var credits = "res://scenes/Credits.tscn"
+var game_over = "res://scenes/GameOver.tscn"
 
 var fruits = {
 	"blueberry" : "res://assets/fruits/01.png",
@@ -32,3 +34,5 @@ func load_scene(scene : String):
 		"main_menu": get_tree().change_scene_to_file(main_menu)
 		"instructions": get_tree().change_scene_to_file(instructions)
 		"select_icon": get_tree().change_scene_to_file(select_icon)
+		"credits": get_tree().change_scene_to_file(credits)
+		"game_over": get_tree().change_scene_to_file(game_over)

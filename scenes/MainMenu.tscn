@@ -46,9 +46,9 @@ vertical_alignment = 1
 
 [node name="InstructionsButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 448.0
-offset_top = 304.0
+offset_top = 528.0
 offset_right = 832.0
-offset_bottom = 384.0
+offset_bottom = 608.0
 texture_normal = ExtResource("2_e5vtp")
 texture_pressed = ExtResource("4_pradp")
 texture_hover = ExtResource("4_pradp")
@@ -102,9 +102,9 @@ vertical_alignment = 1
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 448.0
-offset_top = 528.0
+offset_top = 304.0
 offset_right = 832.0
-offset_bottom = 608.0
+offset_bottom = 384.0
 texture_normal = ExtResource("2_e5vtp")
 texture_pressed = ExtResource("4_pradp")
 texture_hover = ExtResource("4_pradp")

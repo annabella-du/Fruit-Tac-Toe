@@ -11,7 +11,7 @@ script = ExtResource("1_pxg2k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+[node name="ContinueButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -27,7 +27,7 @@ texture_normal = ExtResource("1_x38he")
 texture_pressed = ExtResource("2_psxhj")
 texture_hover = ExtResource("2_psxhj")
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureButton"]
+[node name="Label" type="Label" parent="CanvasLayer/ContinueButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,4 +79,5 @@ text = "its tic-tac-toe."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]

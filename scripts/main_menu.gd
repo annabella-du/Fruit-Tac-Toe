@@ -6,7 +6,7 @@ func _on_instructions_button_pressed() -> void:
 	global.load_scene("instructions")
 
 func _on_credits_button_pressed() -> void:
-	pass # Replace with function body.
+	global.load_scene("credits")
 
 func _on_play_button_pressed() -> void:
 	global.load_scene("select_icon")

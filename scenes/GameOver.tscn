@@ -1,0 +1,124 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7lu70toqepq0"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_8dwua"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="2_irk7a"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="3_5fc2d"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_nxi63"]
+[ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/main_menu/title_med.png" id="5_fb5c6"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_8dwua")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayAgainButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -272.0
+offset_right = 192.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_irk7a")
+texture_pressed = ExtResource("3_5fc2d")
+texture_hover = ExtResource("3_5fc2d")
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayAgainButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -11.5
+offset_right = 64.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_font_sizes/font_size = 40
+text = "Play Again"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -144.0
+offset_right = 192.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_irk7a")
+texture_pressed = ExtResource("3_5fc2d")
+texture_hover = ExtResource("3_5fc2d")
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -20.5
+offset_right = 127.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 184.0
+offset_top = 168.0
+offset_right = 1088.0
+offset_bottom = 280.0
+texture = ExtResource("5_fb5c6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -22.0
+offset_right = 66.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_font_sizes/font_size = 56
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer/TextureRect/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_font_sizes/font_size = 56
+text = "Result Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
