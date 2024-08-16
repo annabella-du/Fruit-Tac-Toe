@@ -1,15 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxiuv0fioxq18"]
+[gd_scene load_steps=21 format=3 uid="uid://bxiuv0fioxq18"]
 
+[ext_resource type="Script" path="res://scripts/select_icon.gd" id="1_1cuft"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="1_lhkuu"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="2_3v7qb"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_52bm3"]
-[ext_resource type="Texture2D" uid="uid://2cd41bucomfr" path="res://assets/main_menu/signal_select.png" id="4_hnx8b"]
+[ext_resource type="Texture2D" uid="uid://be3sas4x8xolr" path="res://assets/main_menu/frame.png" id="5_l2ybh"]
+[ext_resource type="Texture2D" uid="uid://cs5usk618wqgt" path="res://assets/main_menu/frame_hover.png" id="6_8oufu"]
+[ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="7_5wx6q"]
+[ext_resource type="Texture2D" uid="uid://d4jc81ao3h24e" path="res://assets/fruits/02.png" id="8_q0u2r"]
+[ext_resource type="Texture2D" uid="uid://dhovb3ogxsjef" path="res://assets/fruits/03.png" id="9_50l2a"]
+[ext_resource type="Texture2D" uid="uid://dx0bilu8prd8b" path="res://assets/fruits/04.png" id="10_umect"]
+[ext_resource type="Texture2D" uid="uid://d1nq8x1wucawb" path="res://assets/fruits/05.png" id="11_rsdi2"]
+[ext_resource type="Texture2D" uid="uid://d368viojls7kw" path="res://assets/fruits/06.png" id="12_4yc6t"]
+[ext_resource type="Texture2D" uid="uid://buqn4goa5jjdr" path="res://assets/fruits/07.png" id="13_q57gt"]
+[ext_resource type="Texture2D" uid="uid://db1qnw11krni4" path="res://assets/fruits/08.png" id="14_xfyux"]
+[ext_resource type="Texture2D" uid="uid://dgqce652htw3q" path="res://assets/fruits/09.png" id="15_21at0"]
+[ext_resource type="Texture2D" uid="uid://bldme834ivjk6" path="res://assets/fruits/10.png" id="16_c8e04"]
+[ext_resource type="Texture2D" uid="uid://w24mvh0ofvuv" path="res://assets/fruits/11.png" id="17_0eu3l"]
+[ext_resource type="Texture2D" uid="uid://n5bn0oi4e4fw" path="res://assets/fruits/12.png" id="18_d03rr"]
+[ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="19_t11nx"]
+[ext_resource type="Texture2D" uid="uid://c5xu74ikqbgsw" path="res://assets/signal.png" id="20_gsjta"]
 
 [node name="SelectIcon" type="Node2D"]
+script = ExtResource("1_1cuft")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+[node name="Player1Texture" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 552.0
+offset_top = 48.0
+offset_right = 624.0
+offset_bottom = 120.0
+
+[node name="Player2Texture" type="TextureRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 656.0
+offset_top = 48.0
+offset_right = 728.0
+offset_bottom = 120.0
+
+[node name="ContinueButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -25,7 +58,7 @@ texture_normal = ExtResource("1_lhkuu")
 texture_pressed = ExtResource("2_3v7qb")
 texture_hover = ExtResource("2_3v7qb")
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureButton"]
+[node name="Label" type="Label" parent="CanvasLayer/ContinueButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,14 +77,337 @@ text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-custom_minimum_size = Vector2(210, 140)
-anchors_preset = 5
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -104.0
-offset_top = 40.0
-offset_right = 106.0
-offset_bottom = 180.0
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -148.0
+offset_right = 248.0
+offset_bottom = 148.0
 grow_horizontal = 2
-texture = ExtResource("4_hnx8b")
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BlueberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/BlueberryButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_5wx6q")
+
+[node name="PearButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/PearButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_q0u2r")
+
+[node name="CherryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/CherryButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_50l2a")
+
+[node name="BananaButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/BananaButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_umect")
+
+[node name="RedAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/RedAppleButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_rsdi2")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PomegranateButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/PomegranateButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_4yc6t")
+
+[node name="StrawberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/StrawberryButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_q57gt")
+
+[node name="OrangeButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/OrangeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_xfyux")
+
+[node name="PeachButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/PeachButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_21at0")
+
+[node name="CoconutButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/CoconutButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_c8e04")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="KiwiButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/KiwiButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_0eu3l")
+
+[node name="LemonButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/LemonButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_d03rr")
+
+[node name="GreenAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+texture_normal = ExtResource("5_l2ybh")
+texture_pressed = ExtResource("6_8oufu")
+texture_hover = ExtResource("6_8oufu")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/GreenAppleButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -36.0
+offset_right = 36.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_t11nx")
+
+[node name="DisplaySprite" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(641, 110)
+scale = Vector2(5, 5)
+texture = ExtResource("20_gsjta")
+hframes = 4
+frame = 1
+
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/BlueberryButton" to="." method="_on_blueberry_button_pressed"]
