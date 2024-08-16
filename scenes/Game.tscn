@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://sdt7fdu21pch"]
 
 [ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/grid.png" id="1_3tswr"]
-[ext_resource type="PackedScene" uid="uid://8jleudwdgv85" path="res://scenes/Display.tscn" id="2_3wcbp"]
+[ext_resource type="PackedScene" uid="uid://cumayu6wflwrj" path="res://scenes/Display.tscn" id="2_d4rhe"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_q18w1"]
 [ext_resource type="PackedScene" uid="uid://bj6w5j6p333c2" path="res://scenes/Button.tscn" id="4_ljko7"]
 
@@ -10,7 +10,7 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Grid" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -24,16 +24,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3tswr")
 
-[node name="Display" parent="CanvasLayer" groups=["display"] instance=ExtResource("2_3wcbp")]
-position = Vector2(198, 115)
-scale = Vector2(5, 5)
+[node name="Signal" parent="CanvasLayer" instance=ExtResource("2_d4rhe")]
+offset_left = 152.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 240.0
 
 [node name="GameManager" type="Node2D" parent="." groups=["game_manager"]]
 script = ExtResource("3_q18w1")
 
 [node name="Buttons" type="Node2D" parent="."]
 
-[node name="Button" parent="Buttons" instance=ExtResource("4_ljko7")]
+[node name="Button1" parent="Buttons" instance=ExtResource("4_ljko7")]
 offset_left = 416.0
 offset_top = 136.0
 offset_right = 544.0

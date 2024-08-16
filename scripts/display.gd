@@ -1,24 +1,21 @@
-extends Button
+extends TextureRect
 
 @onready var global = get_node("/root/global")
 @onready var gm = get_tree().get_first_node_in_group("game_manager")
 @onready var player1_texture = $Player1Texture
+@onready var player1_outline = $Player1Outline
 @onready var player2_texture = $Player2Texture
-
-@export var id : int
-var blank := true
+@onready var player2_outline = $Player1Outline
 
 func _ready() -> void:
-	player1_texture.visible = false
 	player1_texture.texture = load(global.fruits[global.p1])
-	player2_texture.visible = false
 	player2_texture.texture = load(global.fruits[global.p2])
+	display_outline(1)
 
-func _on_pressed():
-	if blank:
-		if gm.active_player == 1:
-			player1_texture.visible = true
-		elif gm.active_player == 2:
-			player2_texture.visible = true
-		blank = false
-		gm.turn(id)
+func display_outline(player : int):
+	if player == 1:
+		player1_outline.visible = true
+		player2_outline.visible = false
+	elif player == 2:
+		player1_outline.visible = false
+		player2_outline.visible = true
