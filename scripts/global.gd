@@ -4,6 +4,11 @@ extends Node
 var p1 = "blueberry"
 var p2 = "strawberry"
 
+#scenes to load
+var two_players = "res://scenes/TwoPlayers.tscn"
+var main_menu = "res://scenes/MainMenu.tscn"
+var instructions = "res://scenes/Instructions.tscn"
+
 var fruits = {
 	"blueberry" : "res://assets/fruits/01.png",
 	"pear" : "res://assets/fruits/02.png",
@@ -19,3 +24,9 @@ var fruits = {
 	"lemon" : "res://assets/fruits/12.png",
 	"green_apple" : "res://assets/fruits/13.png",
 }
+
+func load_scene(scene : String):
+	match scene:
+		"two_players": get_tree().change_scene_to_file(two_players)
+		"main_menu": get_tree().change_scene_to_file(main_menu)
+		"instructions": get_tree().change_scene_to_file(instructions)

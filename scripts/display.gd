@@ -1,7 +1,8 @@
-extends TextureRect
+extends Node2D
 
 @onready var global = get_node("/root/global")
 @onready var gm = get_tree().get_first_node_in_group("game_manager")
+@onready var sprite = $Sprite2D
 @onready var player1_texture = $Player1Texture
 @onready var player1_outline = $Player1Outline
 @onready var player2_texture = $Player2Texture
@@ -14,11 +15,14 @@ func _ready() -> void:
 
 func display_outline(player : int):
 	if player == 0:
+		sprite.frame = 0
 		player1_outline.visible = false
 		player2_outline.visible = false
 	elif player == 1:
+		sprite.frame = 1
 		player1_outline.visible = true
 		player2_outline.visible = false
 	elif player == 2:
+		sprite.frame = 2
 		player1_outline.visible = false
 		player2_outline.visible = true

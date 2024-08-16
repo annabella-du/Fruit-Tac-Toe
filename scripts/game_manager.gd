@@ -50,8 +50,8 @@ func turn(id : int):
 	
 	#check to see if active player won
 	if won(active_player):
-		active_player = 0
 		print("Player " + str(active_player) + " won!")
+		active_player = 0
 	
 	#check for tie
 	if tie():

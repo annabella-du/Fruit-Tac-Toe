@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxiuv0fioxq18"]
+
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="1_lhkuu"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="2_3v7qb"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_52bm3"]
+[ext_resource type="Texture2D" uid="uid://2cd41bucomfr" path="res://assets/main_menu/signal_select.png" id="4_hnx8b"]
+
+[node name="SelectIcon" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -176.0
+offset_right = 192.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_lhkuu")
+texture_pressed = ExtResource("2_3v7qb")
+texture_hover = ExtResource("2_3v7qb")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_52bm3")
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+custom_minimum_size = Vector2(210, 140)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 40.0
+offset_right = 106.0
+offset_bottom = 180.0
+grow_horizontal = 2
+texture = ExtResource("4_hnx8b")

@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddrbhg7dj8558"]
+
+[ext_resource type="Script" path="res://scripts/instructions.gd" id="1_pxg2k"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="1_x38he"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="2_psxhj"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_6ujr1"]
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/main_menu/title.png" id="4_0t2hg"]
+
+[node name="Instructions" type="Node2D"]
+script = ExtResource("1_pxg2k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -208.0
+offset_right = 192.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_x38he")
+texture_pressed = ExtResource("2_psxhj")
+texture_hover = ExtResource("2_psxhj")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6ujr1")
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -452.0
+offset_top = -104.0
+offset_right = 452.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_0t2hg")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -16.5
+offset_right = 193.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6ujr1")
+theme_override_font_sizes/font_size = 64
+text = "its tic-tac-toe."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
