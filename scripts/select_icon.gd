@@ -12,6 +12,9 @@ var active_player := 1
 func _ready() -> void:
 	display_sprite.frame = 1
 
+func _physics_process(delta: float) -> void:
+	print(p1)
+
 func display_icon():
 	if active_player == 1:
 		player1_texture.texture = load(global.fruits[p1])
