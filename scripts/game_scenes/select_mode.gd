@@ -13,13 +13,13 @@ func _on_tp_button_pressed() -> void:
 	click_sfx.play()
 
 func _on_easy_button_pressed() -> void:
-	next_scene = "easy"
+	next_scene = "easy_select_icon"
 	click_sfx.play()
 
 func _on_hard_button_pressed() -> void:
-	next_scene = "hard"
+	next_scene = "hard_select_icon"
 	click_sfx.play()
 
 func _on_impossible_button_pressed() -> void:
-	next_scene = "impossible"
+	next_scene = "impossible_select_icon"
 	click_sfx.play()

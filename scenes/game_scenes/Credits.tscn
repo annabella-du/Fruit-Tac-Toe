@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://ctact5qul0p1g"]
 
-[ext_resource type="Script" path="res://scripts/credits.gd" id="1_qm6dy"]
-[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_1mnpc"]
-[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_p7qtd"]
-[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_epclw"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="5_0dn5v"]
-[ext_resource type="Texture2D" uid="uid://cfvqmu228pfh2" path="res://assets/custom/title_large.png" id="5_w48fa"]
+[ext_resource type="Script" path="res://scripts/game_scenes/credits.gd" id="1_jln27"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_tym7i"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_6yysm"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_mgib7"]
+[ext_resource type="Texture2D" uid="uid://cfvqmu228pfh2" path="res://assets/custom/title_large.png" id="5_1g5wn"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_1x8tg"]
 
 [node name="Credits" type="Node2D"]
-script = ExtResource("1_qm6dy")
+script = ExtResource("1_jln27")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,9 +24,9 @@ offset_right = 192.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_1mnpc")
-texture_pressed = ExtResource("3_p7qtd")
-texture_hover = ExtResource("3_p7qtd")
+texture_normal = ExtResource("2_tym7i")
+texture_pressed = ExtResource("3_6yysm")
+texture_hover = ExtResource("3_6yysm")
 
 [node name="Label" type="Label" parent="CanvasLayer/ContinueButton"]
 layout_mode = 1
@@ -41,7 +41,7 @@ offset_right = 35.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_epclw")
+theme_override_fonts/font = ExtResource("4_mgib7")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
 horizontal_alignment = 1
@@ -56,7 +56,7 @@ offset_top = 61.0
 offset_right = 624.0
 offset_bottom = 509.0
 grow_horizontal = 2
-texture = ExtResource("5_w48fa")
+texture = ExtResource("5_1g5wn")
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -71,8 +71,8 @@ offset_right = 608.5
 offset_bottom = 196.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_epclw")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("4_mgib7")
+theme_override_font_sizes/font_size = 36
 text = "itch.io: jellybean27
 Github: annabella-du
 Hack Club: Annabella Du
@@ -86,7 +86,7 @@ Switch Click 4 by ZapSplat
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ClickSFX" parent="." instance=ExtResource("5_0dn5v")]
+[node name="ClickSFX" parent="." instance=ExtResource("6_1x8tg")]
 
 [connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

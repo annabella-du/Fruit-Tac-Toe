@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cumayu6wflwrj"]
 
 [ext_resource type="Texture2D" uid="uid://c5xu74ikqbgsw" path="res://assets/custom/signal.png" id="1_aqhor"]
-[ext_resource type="Script" path="res://scripts/display.gd" id="2_tdqb0"]
+[ext_resource type="Script" path="res://scripts/elements/display.gd" id="2_tdqb0"]
 [ext_resource type="Texture2D" uid="uid://b4ebn1w2gjuhe" path="res://assets/custom/outline.png" id="3_ornym"]
 
 [node name="Display" type="Node2D" groups=["display"]]

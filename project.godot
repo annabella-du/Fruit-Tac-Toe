@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="TicTacToe"
-run/main_scene="res://scenes/MainMenu.tscn"
+run/main_scene="res://scenes/game_scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]
 
-global="*res://scripts/global.gd"
-BackgroundMusic="*res://scenes/BackgroundMusic.tscn"
+global="*res://scripts/elements/global.gd"
+BackgroundMusic="*res://scenes/elements/BackgroundMusic.tscn"
 
 [display]
 

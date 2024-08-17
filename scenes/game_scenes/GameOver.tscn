@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7lu70toqepq0"]
 
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_8dwua"]
-[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_irk7a"]
-[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_5fc2d"]
-[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_nxi63"]
-[ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/custom/title_med.png" id="5_fb5c6"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="6_5dwlu"]
+[ext_resource type="Script" path="res://scripts/game_scenes/game_over.gd" id="1_2b1pk"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_f3hy7"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_nwhjp"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_7mv8b"]
+[ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/custom/title_med.png" id="5_vbf8g"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_syj1h"]
 
 [node name="GameOver" type="Node2D"]
-script = ExtResource("1_8dwua")
+script = ExtResource("1_2b1pk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,9 +24,9 @@ offset_right = 192.0
 offset_bottom = -192.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_irk7a")
-texture_pressed = ExtResource("3_5fc2d")
-texture_hover = ExtResource("3_5fc2d")
+texture_normal = ExtResource("2_f3hy7")
+texture_pressed = ExtResource("3_nwhjp")
+texture_hover = ExtResource("3_nwhjp")
 
 [node name="Label" type="Label" parent="CanvasLayer/PlayAgainButton"]
 layout_mode = 1
@@ -41,7 +41,7 @@ offset_right = 64.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_fonts/font = ExtResource("4_7mv8b")
 theme_override_font_sizes/font_size = 40
 text = "Play Again"
 horizontal_alignment = 1
@@ -59,9 +59,9 @@ offset_right = 192.0
 offset_bottom = -64.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_irk7a")
-texture_pressed = ExtResource("3_5fc2d")
-texture_hover = ExtResource("3_5fc2d")
+texture_normal = ExtResource("2_f3hy7")
+texture_pressed = ExtResource("3_nwhjp")
+texture_hover = ExtResource("3_nwhjp")
 
 [node name="Label" type="Label" parent="CanvasLayer/MainMenuButton"]
 layout_mode = 1
@@ -76,7 +76,7 @@ offset_right = 127.0
 offset_bottom = 20.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_fonts/font = ExtResource("4_7mv8b")
 theme_override_font_sizes/font_size = 40
 text = "Main Menu"
 horizontal_alignment = 1
@@ -87,7 +87,7 @@ offset_left = 184.0
 offset_top = 168.0
 offset_right = 1088.0
 offset_bottom = 280.0
-texture = ExtResource("5_fb5c6")
+texture = ExtResource("5_vbf8g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TextureRect"]
 layout_mode = 1
@@ -106,7 +106,7 @@ theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="CanvasLayer/TextureRect/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_fonts/font = ExtResource("4_7mv8b")
 theme_override_font_sizes/font_size = 56
 text = "Game Over!"
 horizontal_alignment = 1
@@ -115,13 +115,13 @@ vertical_alignment = 1
 [node name="ResultLabel" type="Label" parent="CanvasLayer/TextureRect/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_fonts/font = ExtResource("4_nxi63")
+theme_override_fonts/font = ExtResource("4_7mv8b")
 theme_override_font_sizes/font_size = 56
 text = "Result Here"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ClickSFX" parent="." instance=ExtResource("6_5dwlu")]
+[node name="ClickSFX" parent="." instance=ExtResource("6_syj1h")]
 
 [connection signal="pressed" from="CanvasLayer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

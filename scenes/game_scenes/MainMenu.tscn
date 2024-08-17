@@ -1,0 +1,335 @@
+[gd_scene load_steps=21 format=3 uid="uid://dtqm81ysfyftk"]
+
+[ext_resource type="Script" path="res://scripts/game_scenes/main_menu.gd" id="1_ahvd6"]
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/custom/title.png" id="2_ovaja"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_xmicl"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="4_u5vaq"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="5_t2tpa"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_hkanb"]
+[ext_resource type="PackedScene" uid="uid://hso40ait3uh7" path="res://scenes/elements/TextureRect.tscn" id="7_2bwbi"]
+[ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="8_1n777"]
+[ext_resource type="Texture2D" uid="uid://d4jc81ao3h24e" path="res://assets/fruits/02.png" id="9_28u8o"]
+[ext_resource type="Texture2D" uid="uid://dhovb3ogxsjef" path="res://assets/fruits/03.png" id="10_ijm1p"]
+[ext_resource type="Texture2D" uid="uid://dx0bilu8prd8b" path="res://assets/fruits/04.png" id="11_m4uvy"]
+[ext_resource type="Texture2D" uid="uid://d1nq8x1wucawb" path="res://assets/fruits/05.png" id="12_x35jr"]
+[ext_resource type="Texture2D" uid="uid://d368viojls7kw" path="res://assets/fruits/06.png" id="13_tqeyt"]
+[ext_resource type="Texture2D" uid="uid://buqn4goa5jjdr" path="res://assets/fruits/07.png" id="14_07tpa"]
+[ext_resource type="Texture2D" uid="uid://db1qnw11krni4" path="res://assets/fruits/08.png" id="15_6hbnd"]
+[ext_resource type="Texture2D" uid="uid://dgqce652htw3q" path="res://assets/fruits/09.png" id="16_pgq0y"]
+[ext_resource type="Texture2D" uid="uid://bldme834ivjk6" path="res://assets/fruits/10.png" id="17_msm5w"]
+[ext_resource type="Texture2D" uid="uid://w24mvh0ofvuv" path="res://assets/fruits/11.png" id="18_xa8fh"]
+[ext_resource type="Texture2D" uid="uid://n5bn0oi4e4fw" path="res://assets/fruits/12.png" id="19_ww5bt"]
+[ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="20_gkv7g"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ahvd6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TitleTexture" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -452.0
+offset_top = -232.0
+offset_right = 452.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ovaja")
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/TitleTexture"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -40.5
+offset_right = 428.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xmicl")
+theme_override_font_sizes/font_size = 80
+text = "Fruit-Tac-Toe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 448.0
+offset_top = 528.0
+offset_right = 832.0
+offset_bottom = 608.0
+texture_normal = ExtResource("4_u5vaq")
+texture_pressed = ExtResource("5_t2tpa")
+texture_hover = ExtResource("5_t2tpa")
+
+[node name="InstructionsLabel" type="Label" parent="CanvasLayer/InstructionsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -16.5
+offset_right = 148.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xmicl")
+theme_override_font_sizes/font_size = 32
+text = "Instructions"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 448.0
+offset_top = 416.0
+offset_right = 832.0
+offset_bottom = 496.0
+texture_normal = ExtResource("4_u5vaq")
+texture_pressed = ExtResource("5_t2tpa")
+texture_hover = ExtResource("5_t2tpa")
+
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/CreditsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xmicl")
+theme_override_font_sizes/font_size = 32
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 448.0
+offset_top = 304.0
+offset_right = 832.0
+offset_bottom = 384.0
+texture_normal = ExtResource("4_u5vaq")
+texture_pressed = ExtResource("5_t2tpa")
+texture_hover = ExtResource("5_t2tpa")
+
+[node name="Label" type="Label" parent="CanvasLayer/PlayButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xmicl")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickSFX" parent="." instance=ExtResource("6_hkanb")]
+
+[node name="Decoration" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 872.0
+offset_top = 272.0
+offset_right = 944.0
+offset_bottom = 344.0
+texture = ExtResource("8_1n777")
+
+[node name="TextureRect2" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 296.0
+offset_top = 32.0
+offset_right = 368.0
+offset_bottom = 104.0
+texture = ExtResource("9_28u8o")
+
+[node name="TextureRect3" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 632.0
+offset_top = 40.0
+offset_right = 704.0
+offset_bottom = 112.0
+texture = ExtResource("10_ijm1p")
+
+[node name="TextureRect4" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 80.0
+offset_top = 208.0
+offset_right = 152.0
+offset_bottom = 280.0
+texture = ExtResource("11_m4uvy")
+
+[node name="TextureRect5" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1056.0
+offset_top = 512.0
+offset_right = 1128.0
+offset_bottom = 584.0
+texture = ExtResource("12_x35jr")
+
+[node name="TextureRect6" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 248.0
+offset_top = 576.0
+offset_right = 320.0
+offset_bottom = 648.0
+texture = ExtResource("13_tqeyt")
+
+[node name="TextureRect7" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1184.0
+offset_top = 104.0
+offset_right = 1256.0
+offset_bottom = 176.0
+texture = ExtResource("14_07tpa")
+
+[node name="TextureRect8" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 920.0
+offset_top = 40.0
+offset_right = 992.0
+offset_bottom = 112.0
+texture = ExtResource("15_6hbnd")
+
+[node name="TextureRect9" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 200.0
+offset_top = 272.0
+offset_right = 272.0
+offset_bottom = 344.0
+texture = ExtResource("16_pgq0y")
+
+[node name="TextureRect10" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 888.0
+offset_top = 592.0
+offset_right = 960.0
+offset_bottom = 664.0
+texture = ExtResource("17_msm5w")
+
+[node name="TextureRect11" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 56.0
+offset_top = 376.0
+offset_right = 128.0
+offset_bottom = 448.0
+texture = ExtResource("18_xa8fh")
+
+[node name="TextureRect12" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 128.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 88.0
+texture = ExtResource("19_ww5bt")
+
+[node name="TextureRect13" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1088.0
+offset_top = 32.0
+offset_right = 1160.0
+offset_bottom = 104.0
+texture = ExtResource("20_gkv7g")
+
+[node name="TextureRect14" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 48.0
+offset_top = 600.0
+offset_right = 120.0
+offset_bottom = 672.0
+texture = ExtResource("8_1n777")
+
+[node name="TextureRect15" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 440.0
+offset_top = 632.0
+offset_right = 512.0
+offset_bottom = 704.0
+texture = ExtResource("9_28u8o")
+
+[node name="TextureRect16" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1160.0
+offset_top = 240.0
+offset_right = 1232.0
+offset_bottom = 312.0
+texture = ExtResource("10_ijm1p")
+
+[node name="TextureRect17" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1152.0
+offset_top = 600.0
+offset_right = 1224.0
+offset_bottom = 672.0
+texture = ExtResource("11_m4uvy")
+
+[node name="TextureRect18" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 104.0
+offset_bottom = 160.0
+texture = ExtResource("12_x35jr")
+
+[node name="TextureRect19" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1016.0
+offset_top = 312.0
+offset_right = 1088.0
+offset_bottom = 384.0
+texture = ExtResource("13_tqeyt")
+
+[node name="TextureRect20" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 656.0
+offset_top = 632.0
+offset_right = 728.0
+offset_bottom = 704.0
+texture = ExtResource("14_07tpa")
+
+[node name="TextureRect21" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 232.0
+offset_top = 432.0
+offset_right = 304.0
+offset_bottom = 504.0
+texture = ExtResource("15_6hbnd")
+
+[node name="TextureRect22" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 784.0
+offset_top = 24.0
+offset_right = 856.0
+offset_bottom = 96.0
+texture = ExtResource("16_pgq0y")
+
+[node name="TextureRect23" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 488.0
+offset_top = 8.0
+offset_right = 560.0
+offset_bottom = 80.0
+texture = ExtResource("17_msm5w")
+
+[node name="TextureRect24" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 1160.0
+offset_top = 408.0
+offset_right = 1232.0
+offset_bottom = 480.0
+texture = ExtResource("18_xa8fh")
+
+[node name="TextureRect25" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 928.0
+offset_top = 440.0
+offset_right = 1000.0
+offset_bottom = 512.0
+texture = ExtResource("19_ww5bt")
+
+[node name="TextureRect26" parent="Decoration" instance=ExtResource("7_2bwbi")]
+offset_left = 344.0
+offset_top = 336.0
+offset_right = 416.0
+offset_bottom = 408.0
+texture = ExtResource("20_gkv7g")
+
+[connection signal="pressed" from="CanvasLayer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

@@ -1,28 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj6w5j6p333c2"]
+[gd_scene load_steps=8 format=3 uid="uid://bs1qp4d7q3cyk"]
 
-[ext_resource type="Texture2D" uid="uid://c8l86b7jrdy7" path="res://assets/custom/regular_button.png" id="1_aw4u1"]
-[ext_resource type="Script" path="res://scripts/button.gd" id="1_x2xgf"]
-[ext_resource type="Texture2D" uid="uid://cipbohvf14sr4" path="res://assets/custom/hovered_button.png" id="2_ksiw2"]
+[ext_resource type="Texture2D" uid="uid://cipbohvf14sr4" path="res://assets/custom/hovered_button.png" id="1_yango"]
+[ext_resource type="Texture2D" uid="uid://c8l86b7jrdy7" path="res://assets/custom/regular_button.png" id="2_ts6gk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wq7t1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_chqqh"]
-texture = ExtResource("2_ksiw2")
+texture = ExtResource("1_yango")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vd4nq"]
-texture = ExtResource("2_ksiw2")
+texture = ExtResource("1_yango")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73m6p"]
-texture = ExtResource("1_aw4u1")
+texture = ExtResource("2_ts6gk")
 
-[node name="Button" type="Button" groups=["button"]]
+[sub_resource type="GDScript" id="GDScript_trgmy"]
+script/source = "extends Button
+"
+
+[node name="EasyButton" type="Button" groups=["button"]]
 offset_right = 128.0
 offset_bottom = 128.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wq7t1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_chqqh")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_vd4nq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_73m6p")
-script = ExtResource("1_x2xgf")
+script = SubResource("GDScript_trgmy")
 
 [node name="Player1Texture" type="TextureRect" parent="."]
 layout_mode = 0
