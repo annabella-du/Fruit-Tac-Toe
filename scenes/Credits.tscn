@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctact5qul0p1g"]
+[gd_scene load_steps=7 format=3 uid="uid://ctact5qul0p1g"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_qm6dy"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="2_1mnpc"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="3_p7qtd"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_epclw"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="5_0dn5v"]
+[ext_resource type="Texture2D" uid="uid://cfvqmu228pfh2" path="res://assets/main_menu/title_large.png" id="5_w48fa"]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_qm6dy")
@@ -45,4 +47,46 @@ text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -624.0
+offset_top = 61.0
+offset_right = 624.0
+offset_bottom = 509.0
+grow_horizontal = 2
+texture = ExtResource("5_w48fa")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.5
+offset_top = -196.5
+offset_right = 608.5
+offset_bottom = 196.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_epclw")
+theme_override_font_sizes/font_size = 40
+text = "itch.io: jellybean27
+Github: annabella-du
+Hack Club: Annabella Du
+
+Font: 04b_30 by 04
+Art: small fruits asset by DantePixels
+Music: Bossa Nova by Joth
+SFX: Active Studio Speaker Power
+Switch Click 4 by ZapSplat
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickSFX" parent="." instance=ExtResource("5_0dn5v")]
+
 [connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

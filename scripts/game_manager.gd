@@ -52,13 +52,11 @@ func turn(id : int):
 	if won(active_player):
 		global.result = active_player
 		active_player = 0
-		global.load_scene("game_over")
 	
 	#check for tie
 	if tie() and active_player != 0:
 		active_player = 0
 		global.result = 0
-		global.load_scene("game_over")
 	
 	#switch active player
 	if active_player == 1:
@@ -94,3 +92,7 @@ func tie() -> bool:
 			if cell == 0:
 				return false
 	return true
+
+func _on_click_sfx_finished() -> void:
+	if active_player == 0:
+		global.load_scene("game_over")

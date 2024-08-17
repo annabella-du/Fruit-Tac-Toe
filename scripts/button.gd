@@ -4,6 +4,7 @@ extends Button
 @onready var gm = get_tree().get_first_node_in_group("game_manager")
 @onready var player1_texture = $Player1Texture
 @onready var player2_texture = $Player2Texture
+@onready var click_sfx: AudioStreamPlayer2D = $"../../../ClickSFX"
 
 @export var id : int
 var blank := true
@@ -15,6 +16,7 @@ func _ready() -> void:
 	player2_texture.texture = load(global.fruits[global.p2])
 
 func _on_pressed():
+	click_sfx.play()
 	if blank:
 		if gm.active_player == 1:
 			player1_texture.visible = true

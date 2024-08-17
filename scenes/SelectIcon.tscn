@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxiuv0fioxq18"]
+[gd_scene load_steps=22 format=3 uid="uid://bxiuv0fioxq18"]
 
 [ext_resource type="Script" path="res://scripts/select_icon.gd" id="1_1cuft"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="1_lhkuu"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://n5bn0oi4e4fw" path="res://assets/fruits/12.png" id="18_d03rr"]
 [ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="19_t11nx"]
 [ext_resource type="Texture2D" uid="uid://c5xu74ikqbgsw" path="res://assets/signal.png" id="20_gsjta"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="21_0rm2o"]
 
 [node name="SelectIcon" type="Node2D"]
 script = ExtResource("1_1cuft")
@@ -409,6 +410,8 @@ texture = ExtResource("20_gsjta")
 hframes = 4
 frame = 1
 
+[node name="ClickSFX" parent="." instance=ExtResource("21_0rm2o")]
+
 [connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/BlueberryButton" to="." method="_on_blueberry_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/PearButton" to="." method="_on_pear_button_pressed"]
@@ -423,3 +426,4 @@ frame = 1
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer3/KiwiButton" to="." method="_on_kiwi_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer3/LemonButton" to="." method="_on_lemon_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer3/GreenAppleButton" to="." method="_on_green_apple_button_pressed"]
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

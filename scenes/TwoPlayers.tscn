@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://sdt7fdu21pch"]
+[gd_scene load_steps=6 format=3 uid="uid://sdt7fdu21pch"]
 
 [ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/grid.png" id="1_7l3rc"]
 [ext_resource type="PackedScene" uid="uid://bj6w5j6p333c2" path="res://scenes/Button.tscn" id="2_6nccy"]
 [ext_resource type="PackedScene" uid="uid://cumayu6wflwrj" path="res://scenes/Display.tscn" id="3_u07yd"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="4_imsds"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="5_xxg82"]
 
 [node name="TwoPlayers" type="Node2D"]
 
@@ -100,3 +101,7 @@ id = 9
 
 [node name="GameManager" type="Node2D" parent="." groups=["game_manager"]]
 script = ExtResource("4_imsds")
+
+[node name="ClickSFX" parent="." instance=ExtResource("5_xxg82")]
+
+[connection signal="finished" from="ClickSFX" to="GameManager" method="_on_click_sfx_finished"]
