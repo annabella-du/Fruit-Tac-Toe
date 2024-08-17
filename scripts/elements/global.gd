@@ -1,7 +1,7 @@
 extends Node
 
-var p1 : String
-var p2 : String
+var p1 : String = "blueberry"
+var p2 : String = "strawberry"
 var result : int
 
 var fruits = {
@@ -20,6 +20,10 @@ var fruits = {
 	"green_apple" : "res://assets/fruits/13.png",
 }
 @onready var keys = fruits.keys()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		get_tree().reload_current_scene()
 
 func load_scene(scene : String):
 	match scene:

@@ -99,6 +99,7 @@ offset_bottom = 456.0
 id = 9
 
 [node name="Signal" parent="CanvasLayer" instance=ExtResource("4_3njqa")]
+position = Vector2(64, 64)
 
 [node name="ClickSFX" parent="." instance=ExtResource("5_buxtv")]
 
