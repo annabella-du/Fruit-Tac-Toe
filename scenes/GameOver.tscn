@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7lu70toqepq0"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_8dwua"]
-[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="2_irk7a"]
-[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="3_5fc2d"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_irk7a"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_5fc2d"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_nxi63"]
-[ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/main_menu/title_med.png" id="5_fb5c6"]
+[ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/custom/title_med.png" id="5_fb5c6"]
 [ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="6_5dwlu"]
 
 [node name="GameOver" type="Node2D"]

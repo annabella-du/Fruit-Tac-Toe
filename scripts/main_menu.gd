@@ -14,7 +14,7 @@ func _on_credits_button_pressed() -> void:
 	click_sfx.play()
 
 func _on_play_button_pressed() -> void:
-	next_scene = "select_icon"
+	next_scene = "select_mode"
 	click_sfx.play()
 
 func _on_click_sfx_finished() -> void:

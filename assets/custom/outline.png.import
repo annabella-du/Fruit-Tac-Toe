@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2cd41bucomfr"
-path="res://.godot/imported/signal_select.png-ae20edcf829d07fe27de6f3c95252de4.ctex"
+uid="uid://b4ebn1w2gjuhe"
+path="res://.godot/imported/outline.png-d7760054d1607282a093bae3b5f2c68c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main_menu/signal_select.png"
-dest_files=["res://.godot/imported/signal_select.png-ae20edcf829d07fe27de6f3c95252de4.ctex"]
+source_file="res://assets/custom/outline.png"
+dest_files=["res://.godot/imported/outline.png-d7760054d1607282a093bae3b5f2c68c.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://ddrbhg7dj8558"]
 
 [ext_resource type="Script" path="res://scripts/instructions.gd" id="1_pxg2k"]
-[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="1_x38he"]
-[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="2_psxhj"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="1_x38he"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="2_psxhj"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_6ujr1"]
-[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/main_menu/title.png" id="4_0t2hg"]
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/custom/title.png" id="4_0t2hg"]
 [ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="6_fvc0k"]
 
 [node name="Instructions" type="Node2D"]

@@ -1,0 +1,192 @@
+[gd_scene load_steps=7 format=3 uid="uid://q7a5ki4wjefu"]
+
+[ext_resource type="Script" path="res://scripts/select_mode.gd" id="1_7rkah"]
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/custom/title.png" id="1_fooxr"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="2_w7024"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="4_s1p4g"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="5_ng762"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/ClickSFX.tscn" id="6_e7a02"]
+
+[node name="SelectMode" type="Node2D"]
+script = ExtResource("1_7rkah")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -452.0
+offset_top = 88.0
+offset_right = 452.0
+offset_bottom = 200.0
+grow_horizontal = 2
+texture = ExtResource("1_fooxr")
+
+[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7024")
+theme_override_font_sizes/font_size = 56
+text = "Select Game Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TPButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -120.0
+offset_right = 192.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_s1p4g")
+texture_pressed = ExtResource("5_ng762")
+texture_hover = ExtResource("5_ng762")
+
+[node name="Label" type="Label" parent="CanvasLayer/TPButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7024")
+theme_override_font_sizes/font_size = 40
+text = "Two-Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EasyButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -8.0
+offset_right = 192.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_s1p4g")
+texture_pressed = ExtResource("5_ng762")
+texture_hover = ExtResource("5_ng762")
+
+[node name="Label" type="Label" parent="CanvasLayer/EasyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7024")
+theme_override_font_sizes/font_size = 40
+text = "Easy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HardButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 104.0
+offset_right = 192.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_s1p4g")
+texture_pressed = ExtResource("5_ng762")
+texture_hover = ExtResource("5_ng762")
+
+[node name="Label" type="Label" parent="CanvasLayer/HardButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7024")
+theme_override_font_sizes/font_size = 40
+text = "Hard
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ImpossibleButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -144.0
+offset_right = 192.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_s1p4g")
+texture_pressed = ExtResource("5_ng762")
+texture_hover = ExtResource("5_ng762")
+
+[node name="Label" type="Label" parent="CanvasLayer/ImpossibleButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -11.5
+offset_right = 42.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_w7024")
+theme_override_font_sizes/font_size = 40
+text = "Impossible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickSFX" parent="." instance=ExtResource("6_e7a02")]
+
+[connection signal="pressed" from="CanvasLayer/TPButton" to="." method="_on_tp_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ImpossibleButton" to="." method="_on_impossible_button_pressed"]
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

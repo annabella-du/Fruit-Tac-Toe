@@ -8,9 +8,10 @@ var result : int
 var two_players = "res://scenes/TwoPlayers.tscn"
 var main_menu = "res://scenes/MainMenu.tscn"
 var instructions = "res://scenes/Instructions.tscn"
-var select_icon = "res://scenes/SelectIcon.tscn"
 var credits = "res://scenes/Credits.tscn"
 var game_over = "res://scenes/GameOver.tscn"
+var select_mode = "res://scenes/SelectMode.tscn"
+var tp_select_icon = "res://scenes/TPSelectIcon.tscn"
 
 var fruits = {
 	"blueberry" : "res://assets/fruits/01.png",
@@ -33,6 +34,7 @@ func load_scene(scene : String):
 		"two_players": get_tree().change_scene_to_file(two_players)
 		"main_menu": get_tree().change_scene_to_file(main_menu)
 		"instructions": get_tree().change_scene_to_file(instructions)
-		"select_icon": get_tree().change_scene_to_file(select_icon)
+		"tp_select_icon": get_tree().change_scene_to_file(tp_select_icon)
 		"credits": get_tree().change_scene_to_file(credits)
 		"game_over": get_tree().change_scene_to_file(game_over)
+		"select_mode" : get_tree().change_scene_to_file(select_mode)
