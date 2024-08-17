@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtqm81ysfyftk"]
+[gd_scene load_steps=7 format=3 uid="uid://dtqm81ysfyftk"]
 
 [ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/main_menu/title.png" id="1_dshtn"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mmd01"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/main_menu/option.png" id="2_e5vtp"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_l564g"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/main_menu/option_hover.png" id="4_pradp"]
+[ext_resource type="PackedScene" uid="uid://dnrauqtee16fr" path="res://scenes/ClickSFX.tscn" id="6_jvl1i"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_mmd01")
@@ -127,6 +128,8 @@ theme_override_font_sizes/font_size = 32
 text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ClickSFX" parent="." instance=ExtResource("6_jvl1i")]
 
 [connection signal="pressed" from="CanvasLayer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_button_pressed"]
