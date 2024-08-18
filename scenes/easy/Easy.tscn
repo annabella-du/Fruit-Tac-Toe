@@ -103,4 +103,12 @@ position = Vector2(64, 64)
 
 [node name="ClickSFX" parent="." instance=ExtResource("5_buxtv")]
 
+[node name="ComputerTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GameOverTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]
+[connection signal="timeout" from="ComputerTimer" to="." method="_on_computer_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

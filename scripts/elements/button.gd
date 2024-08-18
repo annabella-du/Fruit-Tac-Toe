@@ -1,7 +1,7 @@
 extends Button
 
 @onready var global = get_node("/root/global")
-@onready var two_players: Node2D = $"../../.."
+@onready var scene: Node2D = $"../../.."
 @onready var player1_texture = $Player1Texture
 @onready var player2_texture = $Player2Texture
 @onready var click_sfx: AudioStreamPlayer2D = $"../../../ClickSFX"
@@ -18,10 +18,15 @@ func _ready() -> void:
 func _on_pressed():
 	click_sfx.play()
 	if blank:
-		if two_players.active_player == 1:
+		if scene.active_player == 1:
 			player1_texture.visible = true
-		elif two_players.active_player == 2:
+		elif scene.active_player == 2:
 			player2_texture.visible = true
-		if two_players.active_player != 0:
+		if scene.active_player != 0:
 			blank = false
-			two_players.turn(id)
+			scene.turn(id)
+
+func computer():
+	click_sfx.play()
+	blank = false
+	player2_texture.visible = true

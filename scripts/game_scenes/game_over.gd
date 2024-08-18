@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _on_play_again_button_pressed() -> void:
 	click_sfx.play()
-	next_scene = "two_players"
+	next_scene = global.current_mode
 
 func _on_main_menu_button_pressed() -> void:
 	click_sfx.play()

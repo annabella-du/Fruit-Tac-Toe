@@ -3,6 +3,7 @@ extends Node
 var p1 : String = "blueberry"
 var p2 : String = "strawberry"
 var result : int
+var current_mode : String
 
 var fruits = {
 	"blueberry" : "res://assets/fruits/01.png",

@@ -4,6 +4,9 @@ extends Node2D
 #should in theory contain buttons in order
 @onready var buttons = get_tree().get_nodes_in_group("button") 
 @onready var display = get_tree().get_first_node_in_group("display")
+@onready var computer_timer: Timer = $ComputerTimer
+@onready var game_over_timer: Timer = $GameOverTimer
+
 var active_player = 1
 
 var grid = [
@@ -60,7 +63,7 @@ func turn(id : int):
 	#switch active player
 	if active_player == 1:
 		active_player = 2
-		computer_turn() #computer goes
+		computer_timer.start()
 	elif active_player == 2:
 		active_player = 1
 	display.display_outline(active_player)
@@ -113,8 +116,6 @@ func computer_turn():
 	elif grid[0][2] == grid[1][1] and grid[0][2] != 0 and grid[2][0] == 0:
 		priority[7] = grid[0][2]
 	
-	print(priority)
-	
 	var win_spots = []
 	var block_spots = []
 	var empty_spots = []
@@ -126,9 +127,38 @@ func computer_turn():
 		elif priority[id] == 0:
 			empty_spots.append(id)
 	
-	print(win_spots)
-	print(block_spots)
-	print(empty_spots)
+	var id
+	var rng = randi_range(1, 10)
+	
+	if win_spots.size() == 0 and block_spots.size() == 0:
+		print(1)
+		id = empty_spots.pick_random()
+	elif win_spots.size() == 0 and empty_spots.size() == 0:
+		print(2)
+		id = block_spots.pick_random()
+	elif block_spots.size() == 0 and empty_spots.size() == 0:
+		print(3)
+		id = win_spots.size()
+	elif win_spots.size() == 0:
+		print(4)
+		if rng <= 4: id = block_spots.pick_random()
+		else: id = empty_spots.pick_random()
+	elif block_spots.size() == 0:
+		print(5)
+		if rng <= 4: id = win_spots.pick_random()
+		else: id = empty_spots.pick_random()
+	elif empty_spots.size() == 0:
+		print(6)
+		if rng <= 5: id = win_spots.pick_random()
+		else: id = block_spots.pick_random()
+	else:
+		print(7)
+		if rng <= 2: id = win_spots.pick_random()
+		elif rng <= 4: id = block_spots.pick_random()
+		else: id = empty_spots.pick_random()
+	
+	buttons[id - 1].computer()
+	turn(id)
 	pass
 
 #determine if someone won
@@ -161,4 +191,10 @@ func tie() -> bool:
 
 func _on_click_sfx_finished() -> void:
 	if active_player == 0:
-		global.load_scene("game_over")
+		game_over_timer.start()
+
+func _on_computer_timer_timeout() -> void:
+	computer_turn()
+
+func _on_game_over_timer_timeout() -> void:
+	global.load_scene("game_over")

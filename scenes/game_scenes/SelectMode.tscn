@@ -12,18 +12,27 @@ script = ExtResource("1_jpkln")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-anchors_preset = 5
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -452.0
-offset_top = 88.0
+offset_top = -236.0
 offset_right = 452.0
-offset_bottom = 200.0
+offset_bottom = 236.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_ngcm5")
 
-[node name="Label" type="Label" parent="CanvasLayer/TextureRect"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,23 +51,14 @@ text = "Select Game Mode"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TPButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -120.0
-offset_right = 192.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="TPButton" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_ssh21")
 texture_pressed = ExtResource("5_d44lh")
 texture_hover = ExtResource("5_d44lh")
 
-[node name="Label" type="Label" parent="CanvasLayer/TPButton"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TPButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -77,23 +77,18 @@ text = "Two-Player"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EasyButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -8.0
-offset_right = 192.0
-offset_bottom = 72.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="EasyButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 texture_normal = ExtResource("4_ssh21")
 texture_pressed = ExtResource("5_d44lh")
 texture_hover = ExtResource("5_d44lh")
 
-[node name="Label" type="Label" parent="CanvasLayer/EasyButton"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/EasyButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,23 +107,43 @@ text = "Easy"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HardButton" type="TextureButton" parent="CanvasLayer"]
+[node name="MediumButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_ssh21")
+texture_pressed = ExtResource("5_d44lh")
+texture_hover = ExtResource("5_d44lh")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer/MediumButton"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = 104.0
-offset_right = 192.0
-offset_bottom = 184.0
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_6fl8v")
+theme_override_font_sizes/font_size = 40
+text = "Medium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 40
+
+[node name="HardButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
 texture_normal = ExtResource("4_ssh21")
 texture_pressed = ExtResource("5_d44lh")
 texture_hover = ExtResource("5_d44lh")
 
-[node name="Label" type="Label" parent="CanvasLayer/HardButton"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2/HardButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -148,23 +163,14 @@ text = "Hard
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ImpossibleButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -144.0
-offset_right = 192.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="ImpossibleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
 texture_normal = ExtResource("4_ssh21")
 texture_pressed = ExtResource("5_d44lh")
 texture_hover = ExtResource("5_d44lh")
 
-[node name="Label" type="Label" parent="CanvasLayer/ImpossibleButton"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer2/ImpossibleButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,8 +191,9 @@ vertical_alignment = 1
 
 [node name="ClickSFX" parent="." instance=ExtResource("6_inywi")]
 
-[connection signal="pressed" from="CanvasLayer/TPButton" to="." method="_on_tp_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/EasyButton" to="." method="_on_easy_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/HardButton" to="." method="_on_hard_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ImpossibleButton" to="." method="_on_impossible_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/TPButton" to="." method="_on_tp_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/MediumButton" to="." method="_on_medium_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer2/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer2/ImpossibleButton" to="." method="_on_impossible_button_pressed"]
 [connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]
