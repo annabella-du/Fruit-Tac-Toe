@@ -27,7 +27,7 @@ func _on_continue_button_pressed() -> void:
 
 func _on_click_sfx_finished() -> void:
 	if next_scene:
-		global.load_scene("easy")
+		global.load_scene(global.current_mode)
 
 func _on_blueberry_button_pressed() -> void:
 	click_sfx.play()

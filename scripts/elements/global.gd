@@ -28,12 +28,13 @@ func _input(event: InputEvent) -> void:
 
 func load_scene(scene : String):
 	match scene:
-		"two_players": get_tree().change_scene_to_file("res://scenes/tp/TwoPlayers.tscn")
 		"main_menu": get_tree().change_scene_to_file("res://scenes/game_scenes/MainMenu.tscn")
-		"instructions": get_tree().change_scene_to_file("res://scenes/game_scenes/Instructions.tscn")
-		"tp_select_icon": get_tree().change_scene_to_file("res://scenes/tp/TPSelectIcon.tscn")
 		"credits": get_tree().change_scene_to_file("res://scenes/game_scenes/Credits.tscn")
+		"instructions": get_tree().change_scene_to_file("res://scenes/game_scenes/Instructions.tscn")
+		"select_mode": get_tree().change_scene_to_file("res://scenes/game_scenes/SelectMode.tscn")
 		"game_over": get_tree().change_scene_to_file("res://scenes/game_scenes/GameOver.tscn")
-		"select_mode" : get_tree().change_scene_to_file("res://scenes/game_scenes/SelectMode.tscn")
-		"easy_select_icon": get_tree().change_scene_to_file("res://scenes/easy/EasySelectIcon.tscn")
-		"easy": get_tree().change_scene_to_file("res://scenes/easy/Easy.tscn")
+		"1select_icon" : get_tree().change_scene_to_file("res://scenes/one_player/1SelectIcon.tscn")
+		"2select_icon": get_tree().change_scene_to_file("res://scenes/two_players/2SelectIcon.tscn")
+		"two_players": get_tree().change_scene_to_file("res://scenes/two_players/2P.tscn")
+		"easy": get_tree().change_scene_to_file("res://scenes/one_player/Easy.tscn")
+		"medium": get_tree().change_scene_to_file("res://scenes/one_player/Medium.tscn")

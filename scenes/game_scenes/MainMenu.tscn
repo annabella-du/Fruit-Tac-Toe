@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_xmicl"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="4_u5vaq"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="5_t2tpa"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_hkanb"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="6_hkanb"]
 [ext_resource type="PackedScene" uid="uid://hso40ait3uh7" path="res://scenes/elements/TextureRect.tscn" id="7_2bwbi"]
 [ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="8_1n777"]
 [ext_resource type="Texture2D" uid="uid://d4jc81ao3h24e" path="res://assets/fruits/02.png" id="9_28u8o"]

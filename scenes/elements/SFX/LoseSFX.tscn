@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxvwv1jj8al0j"]
+
+[ext_resource type="AudioStream" uid="uid://b5xv1jl0jge8w" path="res://assets/sound/lose.mp3" id="1_ccn4k"]
+
+[node name="LoseSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ccn4k")
+bus = &"SFX"

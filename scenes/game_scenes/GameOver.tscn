@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_nwhjp"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_7mv8b"]
 [ext_resource type="Texture2D" uid="uid://dyvffwtnbhcwn" path="res://assets/custom/title_med.png" id="5_vbf8g"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_syj1h"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="6_syj1h"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_2b1pk")

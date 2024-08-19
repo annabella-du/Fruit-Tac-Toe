@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_6fl8v"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="4_ssh21"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="5_d44lh"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="6_inywi"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="6_inywi"]
 
 [node name="SelectMode" type="Node2D"]
 script = ExtResource("1_jpkln")

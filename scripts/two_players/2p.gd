@@ -4,14 +4,16 @@ extends Node2D
 #should in theory contain buttons in order
 @onready var buttons = get_tree().get_nodes_in_group("button") 
 @onready var display = get_tree().get_first_node_in_group("display")
-var active_player = 1
+@onready var win_sfx: AudioStreamPlayer2D = $WinSFX
+@onready var lose_sfx: AudioStreamPlayer2D = $LoseSFX
 
+var active_player = 1
 var grid = [
 	[0, 0, 0],
 	[0, 0, 0],
 	[0, 0, 0]
 ]
-var can_go := true
+var game_over_sfx := true
 
 #called by button scripts
 func turn(id : int):
@@ -94,5 +96,15 @@ func tie() -> bool:
 	return true
 
 func _on_click_sfx_finished() -> void:
-	if active_player == 0:
-		global.load_scene("game_over")
+	if active_player == 0 and game_over_sfx:
+		game_over_sfx = false
+		if global.result != 0:
+			win_sfx.play()
+		else:
+			lose_sfx.play()
+
+func _on_win_sfx_finished() -> void:
+	global.load_scene("game_over")
+
+func _on_lose_sfx_finished() -> void:
+	global.load_scene("game_over")

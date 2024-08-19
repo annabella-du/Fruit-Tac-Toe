@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=3 uid="uid://df48dlbjhejts"]
+
+[ext_resource type="Script" path="res://scripts/one_player/easy.gd" id="1_4tr0c"]
+[ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/custom/grid.png" id="2_r85ga"]
+[ext_resource type="PackedScene" uid="uid://bj6w5j6p333c2" path="res://scenes/elements/Button.tscn" id="3_1cckc"]
+[ext_resource type="PackedScene" uid="uid://cumayu6wflwrj" path="res://scenes/elements/Display.tscn" id="4_84xfw"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="5_buahc"]
+[ext_resource type="PackedScene" uid="uid://2s2wt4fdoeyf" path="res://scenes/elements/SFX/WinSFX.tscn" id="6_qwkl0"]
+[ext_resource type="PackedScene" uid="uid://dxvwv1jj8al0j" path="res://scenes/elements/SFX/LoseSFX.tscn" id="7_ieqf4"]
+
+[node name="Easy" type="Node2D"]
+script = ExtResource("1_4tr0c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Grid" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -232.0
+offset_right = 232.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_r85ga")
+
+[node name="Button1" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 136.0
+id = 1
+
+[node name="Button2" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 8.0
+offset_right = 296.0
+offset_bottom = 136.0
+id = 2
+
+[node name="Button3" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 8.0
+offset_right = 456.0
+offset_bottom = 136.0
+id = 3
+
+[node name="Button4" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 168.0
+offset_right = 136.0
+offset_bottom = 296.0
+id = 4
+
+[node name="Button5" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 168.0
+offset_right = 296.0
+offset_bottom = 296.0
+id = 5
+
+[node name="Button6" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 168.0
+offset_right = 456.0
+offset_bottom = 296.0
+id = 6
+
+[node name="Button7" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 328.0
+offset_right = 136.0
+offset_bottom = 456.0
+id = 7
+
+[node name="Button8" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 328.0
+offset_right = 296.0
+offset_bottom = 456.0
+id = 8
+
+[node name="Button9" parent="CanvasLayer/Grid" instance=ExtResource("3_1cckc")]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 328.0
+offset_right = 456.0
+offset_bottom = 456.0
+id = 9
+
+[node name="Signal" parent="CanvasLayer" instance=ExtResource("4_84xfw")]
+position = Vector2(64, 64)
+
+[node name="ClickSFX" parent="." instance=ExtResource("5_buahc")]
+unique_name_in_owner = true
+
+[node name="WinSFX" parent="." instance=ExtResource("6_qwkl0")]
+
+[node name="LoseSFX" parent="." instance=ExtResource("7_ieqf4")]
+
+[node name="ComputerTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]
+[connection signal="finished" from="WinSFX" to="." method="_on_win_sfx_finished"]
+[connection signal="finished" from="LoseSFX" to="." method="_on_lose_sfx_finished"]
+[connection signal="timeout" from="ComputerTimer" to="." method="_on_computer_timer_timeout"]

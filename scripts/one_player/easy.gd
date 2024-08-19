@@ -5,10 +5,11 @@ extends Node2D
 @onready var buttons = get_tree().get_nodes_in_group("button") 
 @onready var display = get_tree().get_first_node_in_group("display")
 @onready var computer_timer: Timer = $ComputerTimer
-@onready var game_over_timer: Timer = $GameOverTimer
+@onready var win_sfx: AudioStreamPlayer2D = $WinSFX
+@onready var lose_sfx: AudioStreamPlayer2D = $LoseSFX
 
 var active_player = 1
-
+var game_over_sfx := true
 var grid = [
 	[0, 0, 0],
 	[0, 0, 0],
@@ -63,6 +64,7 @@ func turn(id : int):
 	#switch active player
 	if active_player == 1:
 		active_player = 2
+		computer_timer.wait_time = randf_range(1.0, 1.5)
 		computer_timer.start()
 	elif active_player == 2:
 		active_player = 1
@@ -131,28 +133,21 @@ func computer_turn():
 	var rng = randi_range(1, 10)
 	
 	if win_spots.size() == 0 and block_spots.size() == 0:
-		print(1)
 		id = empty_spots.pick_random()
 	elif win_spots.size() == 0 and empty_spots.size() == 0:
-		print(2)
 		id = block_spots.pick_random()
 	elif block_spots.size() == 0 and empty_spots.size() == 0:
-		print(3)
 		id = win_spots.size()
 	elif win_spots.size() == 0:
-		print(4)
 		if rng <= 4: id = block_spots.pick_random()
 		else: id = empty_spots.pick_random()
 	elif block_spots.size() == 0:
-		print(5)
 		if rng <= 4: id = win_spots.pick_random()
 		else: id = empty_spots.pick_random()
 	elif empty_spots.size() == 0:
-		print(6)
 		if rng <= 5: id = win_spots.pick_random()
 		else: id = block_spots.pick_random()
 	else:
-		print(7)
 		if rng <= 2: id = win_spots.pick_random()
 		elif rng <= 4: id = block_spots.pick_random()
 		else: id = empty_spots.pick_random()
@@ -190,11 +185,18 @@ func tie() -> bool:
 	return true
 
 func _on_click_sfx_finished() -> void:
-	if active_player == 0:
-		game_over_timer.start()
+	if active_player == 0 and game_over_sfx:
+		game_over_sfx = false
+		if global.result == 1:
+			win_sfx.play()
+		else:
+			lose_sfx.play()
 
 func _on_computer_timer_timeout() -> void:
 	computer_turn()
 
-func _on_game_over_timer_timeout() -> void:
+func _on_win_sfx_finished() -> void:
+	global.load_scene("game_over")
+
+func _on_lose_sfx_finished() -> void:
 	global.load_scene("game_over")

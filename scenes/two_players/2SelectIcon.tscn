@@ -1,29 +1,29 @@
 [gd_scene load_steps=22 format=3 uid="uid://bxiuv0fioxq18"]
 
-[ext_resource type="Script" path="res://scripts/tp/tp_select_icon.gd" id="1_sjvfg"]
-[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_ko4kw"]
-[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_vao5w"]
-[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_8c31q"]
-[ext_resource type="Texture2D" uid="uid://be3sas4x8xolr" path="res://assets/custom/frame.png" id="5_m8smd"]
-[ext_resource type="Texture2D" uid="uid://cs5usk618wqgt" path="res://assets/custom/frame_hover.png" id="6_krtb3"]
-[ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="7_umsaq"]
-[ext_resource type="Texture2D" uid="uid://d4jc81ao3h24e" path="res://assets/fruits/02.png" id="8_uyhte"]
-[ext_resource type="Texture2D" uid="uid://dhovb3ogxsjef" path="res://assets/fruits/03.png" id="9_foy7s"]
-[ext_resource type="Texture2D" uid="uid://dx0bilu8prd8b" path="res://assets/fruits/04.png" id="10_pikjb"]
-[ext_resource type="Texture2D" uid="uid://d1nq8x1wucawb" path="res://assets/fruits/05.png" id="11_ag6et"]
-[ext_resource type="Texture2D" uid="uid://d368viojls7kw" path="res://assets/fruits/06.png" id="12_tybif"]
-[ext_resource type="Texture2D" uid="uid://buqn4goa5jjdr" path="res://assets/fruits/07.png" id="13_f6w7q"]
-[ext_resource type="Texture2D" uid="uid://db1qnw11krni4" path="res://assets/fruits/08.png" id="14_pyv31"]
-[ext_resource type="Texture2D" uid="uid://dgqce652htw3q" path="res://assets/fruits/09.png" id="15_gl4fe"]
-[ext_resource type="Texture2D" uid="uid://bldme834ivjk6" path="res://assets/fruits/10.png" id="16_uyj67"]
-[ext_resource type="Texture2D" uid="uid://w24mvh0ofvuv" path="res://assets/fruits/11.png" id="17_7i2c6"]
-[ext_resource type="Texture2D" uid="uid://n5bn0oi4e4fw" path="res://assets/fruits/12.png" id="18_et6ip"]
-[ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="19_wxn4r"]
-[ext_resource type="Texture2D" uid="uid://c5xu74ikqbgsw" path="res://assets/custom/signal.png" id="20_n6ia8"]
-[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/ClickSFX.tscn" id="21_b0l1h"]
+[ext_resource type="Script" path="res://scripts/two_players/2select_icon.gd" id="1_1m6ll"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="2_jpxkd"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="3_phlqj"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="4_cli3f"]
+[ext_resource type="Texture2D" uid="uid://be3sas4x8xolr" path="res://assets/custom/frame.png" id="5_q01g5"]
+[ext_resource type="Texture2D" uid="uid://cs5usk618wqgt" path="res://assets/custom/frame_hover.png" id="6_bx16k"]
+[ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="7_iwcev"]
+[ext_resource type="Texture2D" uid="uid://d4jc81ao3h24e" path="res://assets/fruits/02.png" id="8_8n0gq"]
+[ext_resource type="Texture2D" uid="uid://dhovb3ogxsjef" path="res://assets/fruits/03.png" id="9_6ouwq"]
+[ext_resource type="Texture2D" uid="uid://dx0bilu8prd8b" path="res://assets/fruits/04.png" id="10_38mja"]
+[ext_resource type="Texture2D" uid="uid://d1nq8x1wucawb" path="res://assets/fruits/05.png" id="11_jdet2"]
+[ext_resource type="Texture2D" uid="uid://d368viojls7kw" path="res://assets/fruits/06.png" id="12_dfid7"]
+[ext_resource type="Texture2D" uid="uid://buqn4goa5jjdr" path="res://assets/fruits/07.png" id="13_sderp"]
+[ext_resource type="Texture2D" uid="uid://db1qnw11krni4" path="res://assets/fruits/08.png" id="14_ma8wi"]
+[ext_resource type="Texture2D" uid="uid://dgqce652htw3q" path="res://assets/fruits/09.png" id="15_p0us3"]
+[ext_resource type="Texture2D" uid="uid://bldme834ivjk6" path="res://assets/fruits/10.png" id="16_p1c0t"]
+[ext_resource type="Texture2D" uid="uid://w24mvh0ofvuv" path="res://assets/fruits/11.png" id="17_hn20v"]
+[ext_resource type="Texture2D" uid="uid://n5bn0oi4e4fw" path="res://assets/fruits/12.png" id="18_j7bg8"]
+[ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="19_rh0bx"]
+[ext_resource type="Texture2D" uid="uid://c5xu74ikqbgsw" path="res://assets/custom/signal.png" id="20_qce16"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="21_0luhc"]
 
-[node name="TPSelectIcon" type="Node2D"]
-script = ExtResource("1_sjvfg")
+[node name="2SelectIcon" type="Node2D"]
+script = ExtResource("1_1m6ll")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -55,9 +55,9 @@ offset_right = 192.0
 offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("2_ko4kw")
-texture_pressed = ExtResource("3_vao5w")
-texture_hover = ExtResource("3_vao5w")
+texture_normal = ExtResource("2_jpxkd")
+texture_pressed = ExtResource("3_phlqj")
+texture_hover = ExtResource("3_phlqj")
 
 [node name="Label" type="Label" parent="CanvasLayer/ContinueButton"]
 layout_mode = 1
@@ -72,7 +72,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_8c31q")
+theme_override_fonts/font = ExtResource("4_cli3f")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
 horizontal_alignment = 1
@@ -99,9 +99,9 @@ alignment = 1
 [node name="BlueberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/BlueberryButton"]
@@ -117,14 +117,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_umsaq")
+texture = ExtResource("7_iwcev")
 
 [node name="PearButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/PearButton"]
@@ -140,14 +140,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_uyhte")
+texture = ExtResource("8_8n0gq")
 
 [node name="CherryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/CherryButton"]
@@ -163,14 +163,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_foy7s")
+texture = ExtResource("9_6ouwq")
 
 [node name="BananaButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/BananaButton"]
@@ -186,14 +186,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("10_pikjb")
+texture = ExtResource("10_38mja")
 
 [node name="RedAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer/RedAppleButton"]
@@ -209,7 +209,7 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_ag6et")
+texture = ExtResource("11_jdet2")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -218,9 +218,9 @@ alignment = 1
 [node name="PomegranateButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/PomegranateButton"]
@@ -236,14 +236,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("12_tybif")
+texture = ExtResource("12_dfid7")
 
 [node name="StrawberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/StrawberryButton"]
@@ -259,14 +259,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_f6w7q")
+texture = ExtResource("13_sderp")
 
 [node name="OrangeButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/OrangeButton"]
@@ -282,14 +282,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("14_pyv31")
+texture = ExtResource("14_ma8wi")
 
 [node name="PeachButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/PeachButton"]
@@ -305,14 +305,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("15_gl4fe")
+texture = ExtResource("15_p0us3")
 
 [node name="CoconutButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer2/CoconutButton"]
@@ -328,7 +328,7 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("16_uyj67")
+texture = ExtResource("16_p1c0t")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -337,9 +337,9 @@ alignment = 1
 [node name="KiwiButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/KiwiButton"]
@@ -355,14 +355,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("17_7i2c6")
+texture = ExtResource("17_hn20v")
 
 [node name="LemonButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/LemonButton"]
@@ -378,14 +378,14 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("18_et6ip")
+texture = ExtResource("18_j7bg8")
 
 [node name="GreenAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
-texture_normal = ExtResource("5_m8smd")
-texture_pressed = ExtResource("6_krtb3")
-texture_hover = ExtResource("6_krtb3")
+texture_normal = ExtResource("5_q01g5")
+texture_pressed = ExtResource("6_bx16k")
+texture_hover = ExtResource("6_bx16k")
 stretch_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/HBoxContainer3/GreenAppleButton"]
@@ -401,16 +401,16 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("19_wxn4r")
+texture = ExtResource("19_rh0bx")
 
 [node name="DisplaySprite" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(641, 110)
 scale = Vector2(5, 5)
-texture = ExtResource("20_n6ia8")
+texture = ExtResource("20_qce16")
 hframes = 4
 frame = 1
 
-[node name="ClickSFX" parent="." instance=ExtResource("21_b0l1h")]
+[node name="ClickSFX" parent="." instance=ExtResource("21_0luhc")]
 
 [connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/BlueberryButton" to="." method="_on_blueberry_button_pressed"]
