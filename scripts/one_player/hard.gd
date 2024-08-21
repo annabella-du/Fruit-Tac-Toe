@@ -17,7 +17,7 @@ var grid = [
 ]
 
 func _ready() -> void:
-	computer_timer.wait_time = randf_range(0.75, 1)
+	computer_timer.wait_time = randf_range(0.5, 0.75)
 	computer_timer.start()
 
 #called by button scripts
@@ -75,91 +75,97 @@ func turn(id : int):
 	display.display_outline(active_player)
 
 func computer_turn():
-	var priority = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
-	
-	#mark filled cells
-	for i in range(3): #rows
-		for j in range(3): #columns (cells)
-			if grid[i][j] != 0:
-				priority[(i * 3) + j + 1] = -1
+	var priority1 = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
+	var priority2 = {1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0, 8:0, 9:0}
 	
 	#mark potential wins
 	#rows
 	for i in range(3):
 		#left
 		if grid[i][1] == grid[i][2] and grid[i][1] != 0 and grid[i][0] == 0:
-			priority[(i * 3) + 1] = grid[i][1]
+			if grid[i][1] == 1: priority1[(i * 3) + 1] = 1
+			else: priority2[(i * 3) + 1] = 1
 		#middle
-		elif grid[i][0] == grid[i][2] and grid[i][0] != 0 and grid[i][1] == 0:
-			priority[(i * 3) + 2] = grid[i][0]
+		if grid[i][0] == grid[i][2] and grid[i][0] != 0 and grid[i][1] == 0:
+			if grid[i][0] == 1: priority1[(i * 3) + 2] = 1
+			else: priority2[(i * 3) + 1] = 1
 		#right
-		elif grid[i][0] == grid[i][1] and grid[i][0] != 0 and grid[i][2] == 0:
-			priority[(i * 3) + 3] = grid[i][0]
+		if grid[i][0] == grid[i][1] and grid[i][0] != 0 and grid[i][2] == 0:
+			if grid[i][0] == 1: priority1[(i * 3) + 3] = 1
+			else: priority2[(i * 3) + 1] = 1
 	
 	#columns
 	for i in range(3):
 		#top
 		if grid[1][i] == grid[2][i] and grid[1][i] != 0 and grid[0][i] == 0:
-			priority[i + 1] = grid[1][i]
+			if grid[1][i] == 1: priority1[i + 1] = 1
+			else: priority2[(i * 3) + 1] = 1
 		#middle
-		elif grid[0][i] == grid[2][i] and grid[0][i] != 0 and grid[1][i] == 0:
-			priority[i + 4] = grid[0][i]
+		if grid[0][i] == grid[2][i] and grid[0][i] != 0 and grid[1][i] == 0:
+			if grid[0][i] == 1: priority1[i + 4] = 1
+			else: priority2[(i * 3) + 1] = 1
 		#right
-		elif grid[0][i] == grid[1][i] and grid[0][i] != 0 and grid[2][i] == 0:
-			priority[i + 7] = grid[0][i]
+		if grid[0][i] == grid[1][i] and grid[0][i] != 0 and grid[2][i] == 0:
+			if grid[0][i] == 1: priority1[i + 7] = 1
+			else: priority2[(i * 3) + 1] = 1
 	
 	#diagonals
 	if grid[1][1] == grid[2][2] and grid[1][1] != 0 and grid[0][0] == 0:
-		priority[1] = grid[1][1]
-	elif grid[0][0] == grid[2][2] and grid[0][0] != 0 and grid[1][1] == 0:
-		priority[5] = grid[0][0]
-	elif grid[0][0] == grid[1][1] and grid[0][0] != 0 and grid[2][2] == 0:
-		priority[9] = grid[0][0]
+		if grid[1][1] == 1: priority1[1] = 1
+		else: priority1[1] = 1
+	if grid[0][0] == grid[2][2] and grid[0][0] != 0 and grid[1][1] == 0:
+		if grid[0][0] == 1: priority1[5] = 1
+		else: priority1[0] = 1
+	if grid[0][0] == grid[1][1] and grid[0][0] != 0 and grid[2][2] == 0:
+		if grid[0][0] == 1: priority1[9] = 1
+		else: priority1[9] = 1
 	if grid[1][1] == grid[2][0] and grid[1][1] != 0 and grid[0][2] == 0:
-		priority[3] = grid[1][1]
-	elif grid[0][2] == grid[2][0] and grid[0][2] != 0 and grid[1][1] == 0:
-		priority[5] = grid[0][2]
-	elif grid[0][2] == grid[1][1] and grid[0][2] != 0 and grid[2][0] == 0:
-		priority[7] = grid[0][2]
+		if grid[1][1] == 1: priority1[3] = 1
+		else: priority1[3] = 1
+	if grid[0][2] == grid[2][0] and grid[0][2] != 0 and grid[1][1] == 0:
+		if grid[0][2] == 1: priority1[5] = 1
+		else: priority1[5] = 1
+	if grid[0][2] == grid[1][1] and grid[0][2] != 0 and grid[2][0] == 0:
+		if grid[0][2] == 1: priority1[7] = 1
+		else: priority1[7] = 1
 	
 	var win_spots = []
 	var block_spots = []
 	var empty_spots = []
-	for id in priority:
-		if priority[id] == 2:
-			win_spots.append(id)
-		elif priority[id] == 1:
-			block_spots.append(id)
-		elif priority[id] == 0:
-			empty_spots.append(id)
+	for id in range(1, 10):
+		if priority1[id] == 1: block_spots.append(id)
+		if priority2[id] == 1: win_spots.append(id)
+		if priority1[id] == 0 and priority2[id] == 0 and buttons[id - 1].blank: empty_spots.append(id)
 	
 	var id
 	var rng = randi_range(1, 10)
 	
+	print("win: " + str(win_spots) + " block: " + str(block_spots) + " empty: " + str(empty_spots))
+	
 	if win_spots.size() == 0 and block_spots.size() == 0:
 		id = empty_spots.pick_random()
+		print(0)
 	elif win_spots.size() == 0 and empty_spots.size() == 0:
 		id = block_spots.pick_random()
+		print(1)
 	elif block_spots.size() == 0 and empty_spots.size() == 0:
 		id = win_spots.size()
+		print(2)
 	elif win_spots.size() == 0:
 		id = block_spots.pick_random()
+		print(3)
 	elif block_spots.size() == 0:
 		id = win_spots.pick_random()
+		print(4)
 	elif empty_spots.size() == 0:
 		id = win_spots.pick_random()
+		print(5)
 	else:
 		id = win_spots.pick_random()
+		print(6)
 	
-	print(win_spots)
-	print(block_spots)
-	print(empty_spots)
-	
-	if buttons[id - 1].blank:
-		buttons[id - 1].computer()
-		turn(id)
-	else:
-		computer_turn()
+	buttons[id - 1].computer()
+	turn(id)
 
 #determine if someone won
 func won(player : int) -> bool:
