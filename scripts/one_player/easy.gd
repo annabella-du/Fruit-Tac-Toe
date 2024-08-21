@@ -64,7 +64,7 @@ func turn(id : int):
 	#switch active player
 	if active_player == 1:
 		active_player = 2
-		computer_timer.wait_time = randf_range(1.0, 1.5)
+		computer_timer.wait_time = randf_range(1.0, 1.25)
 		computer_timer.start()
 	elif active_player == 2:
 		active_player = 1

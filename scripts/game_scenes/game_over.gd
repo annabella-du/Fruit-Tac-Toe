@@ -7,10 +7,16 @@ extends Node2D
 var next_scene : String
 
 func _ready() -> void:
-	match global.result:
-		0: result_label.text = "It's a Tie!"
-		1: result_label.text = "Player 1 Wins!"
-		2: result_label.text = "Player 2 Wins!"
+	if global.current_mode == "two_players":
+		match global.result:
+			0: result_label.text = "It's a Tie!"
+			1: result_label.text = "Player 1 Wins!"
+			2: result_label.text = "Player 2 Wins!"
+	else:
+		match global.result:
+			0: result_label.text = "It's a Tie!"
+			1: result_label.text = "You Win!"
+			2: result_label.text = "You Lose :'("
 
 func _on_play_again_button_pressed() -> void:
 	click_sfx.play()

@@ -38,3 +38,4 @@ func load_scene(scene : String):
 		"two_players": get_tree().change_scene_to_file("res://scenes/two_players/2P.tscn")
 		"easy": get_tree().change_scene_to_file("res://scenes/one_player/Easy.tscn")
 		"medium": get_tree().change_scene_to_file("res://scenes/one_player/Medium.tscn")
+		"hard": get_tree().change_scene_to_file("res://scenes/one_player/Hard.tscn")

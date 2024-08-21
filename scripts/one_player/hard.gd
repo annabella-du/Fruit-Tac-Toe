@@ -8,13 +8,17 @@ extends Node2D
 @onready var win_sfx: AudioStreamPlayer2D = $WinSFX
 @onready var lose_sfx: AudioStreamPlayer2D = $LoseSFX
 
-var active_player = 1
+var active_player = 2
 var game_over_sfx := true
 var grid = [
 	[0, 0, 0],
 	[0, 0, 0],
 	[0, 0, 0]
 ]
+
+func _ready() -> void:
+	computer_timer.wait_time = randf_range(0.75, 1)
+	computer_timer.start()
 
 #called by button scripts
 func turn(id : int):
@@ -139,22 +143,23 @@ func computer_turn():
 	elif block_spots.size() == 0 and empty_spots.size() == 0:
 		id = win_spots.size()
 	elif win_spots.size() == 0:
-		if rng <= 8: id = block_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = block_spots.pick_random()
 	elif block_spots.size() == 0:
-		if rng <= 8: id = win_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = win_spots.pick_random()
 	elif empty_spots.size() == 0:
-		if rng <= 7: id = win_spots.pick_random()
-		else: id = block_spots.pick_random()
+		id = win_spots.pick_random()
 	else:
-		if rng <= 6: id = win_spots.pick_random()
-		elif rng <= 8: id = block_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = win_spots.pick_random()
 	
-	buttons[id - 1].computer()
-	turn(id)
-	pass
+	print(win_spots)
+	print(block_spots)
+	print(empty_spots)
+	
+	if buttons[id - 1].blank:
+		buttons[id - 1].computer()
+		turn(id)
+	else:
+		computer_turn()
 
 #determine if someone won
 func won(player : int) -> bool:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://df48dlbjhejts"]
 
-[ext_resource type="Script" path="res://scripts/one_player/easy.gd" id="1_4tr0c"]
+[ext_resource type="Script" path="res://scripts/one_player/medium.gd" id="1_122pe"]
 [ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/custom/grid.png" id="2_r85ga"]
 [ext_resource type="PackedScene" uid="uid://bj6w5j6p333c2" path="res://scenes/elements/Button.tscn" id="3_1cckc"]
 [ext_resource type="PackedScene" uid="uid://cumayu6wflwrj" path="res://scenes/elements/Display.tscn" id="4_84xfw"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://2s2wt4fdoeyf" path="res://scenes/elements/SFX/WinSFX.tscn" id="6_qwkl0"]
 [ext_resource type="PackedScene" uid="uid://dxvwv1jj8al0j" path="res://scenes/elements/SFX/LoseSFX.tscn" id="7_ieqf4"]
 
-[node name="Easy" type="Node2D"]
-script = ExtResource("1_4tr0c")
+[node name="Medium" type="Node2D"]
+script = ExtResource("1_122pe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1

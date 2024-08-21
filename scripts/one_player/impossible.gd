@@ -8,7 +8,7 @@ extends Node2D
 @onready var win_sfx: AudioStreamPlayer2D = $WinSFX
 @onready var lose_sfx: AudioStreamPlayer2D = $LoseSFX
 
-var active_player = 1
+var active_player = 2
 var game_over_sfx := true
 var grid = [
 	[0, 0, 0],
@@ -139,21 +139,19 @@ func computer_turn():
 	elif block_spots.size() == 0 and empty_spots.size() == 0:
 		id = win_spots.size()
 	elif win_spots.size() == 0:
-		if rng <= 8: id = block_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = block_spots.pick_random()
 	elif block_spots.size() == 0:
-		if rng <= 8: id = win_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = win_spots.pick_random()
 	elif empty_spots.size() == 0:
-		if rng <= 7: id = win_spots.pick_random()
-		else: id = block_spots.pick_random()
+		id = win_spots.pick_random()
 	else:
-		if rng <= 6: id = win_spots.pick_random()
-		elif rng <= 8: id = block_spots.pick_random()
-		else: id = empty_spots.pick_random()
+		id = win_spots.pick_random()
 	
 	buttons[id - 1].computer()
 	turn(id)
+	pass
+
+func impossible():
 	pass
 
 #determine if someone won
