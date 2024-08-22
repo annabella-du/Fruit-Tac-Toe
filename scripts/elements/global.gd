@@ -22,13 +22,7 @@ var fruits = {
 }
 @onready var keys = fruits.keys()
 
-func _physics_process(_delta: float) -> void:
-	if get_tree().paused:
-		print("paused")
-
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):
-		get_tree().paused = !get_tree().paused
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 
