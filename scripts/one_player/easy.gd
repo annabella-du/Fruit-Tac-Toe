@@ -84,11 +84,11 @@ func computer_turn():
 		#middle
 		if grid[i][0] == grid[i][2] and grid[i][0] != 0 and grid[i][1] == 0:
 			if grid[i][0] == 1: priority1[(i * 3) + 2] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[(i * 3) + 2] = 1
 		#right
 		if grid[i][0] == grid[i][1] and grid[i][0] != 0 and grid[i][2] == 0:
 			if grid[i][0] == 1: priority1[(i * 3) + 3] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[(i * 3) + 3] = 1
 	
 	#columns
 	for i in range(3):
@@ -111,7 +111,7 @@ func computer_turn():
 		else: priority2[1] = 1
 	if grid[0][0] == grid[2][2] and grid[0][0] != 0 and grid[1][1] == 0:
 		if grid[0][0] == 1: priority1[5] = 1
-		else: priority2[0] = 1
+		else: priority2[5] = 1
 	if grid[0][0] == grid[1][1] and grid[0][0] != 0 and grid[2][2] == 0:
 		if grid[0][0] == 1: priority1[9] = 1
 		else: priority2[9] = 1
@@ -135,8 +135,6 @@ func computer_turn():
 	
 	var id
 	var rng = randi_range(1, 10)
-	
-	print("win: " + str(win_spots) + " block: " + str(block_spots) + " empty: " + str(empty_spots))
 	
 	if win_spots.size() == 0 and block_spots.size() == 0:
 		id = empty_spots.pick_random()

@@ -51,10 +51,10 @@ vertical_alignment = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -624.0
-offset_top = 61.0
-offset_right = 624.0
-offset_bottom = 509.0
+offset_left = -582.0
+offset_top = 80.0
+offset_right = 582.0
+offset_bottom = 528.0
 grow_horizontal = 2
 texture = ExtResource("5_1g5wn")
 
@@ -78,10 +78,9 @@ Github: annabella-du
 Hack Club: Annabella Du
 
 Font: 04b_30 by 04
-Art: small fruits asset by DantePixels
+Art: Small Fruits asset by DantePixels
 Music: Bossa Nova by Joth
-SFX: Active Studio Speaker Power
-Switch Click 4 by ZapSplat
+SFX by ZapSplat
 "
 horizontal_alignment = 1
 vertical_alignment = 1

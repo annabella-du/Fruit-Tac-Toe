@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="20_gkv7g"]
 
 [node name="MainMenu" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_ahvd6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

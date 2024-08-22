@@ -112,11 +112,11 @@ func computer_turn():
 		#middle
 		if grid[i][0] == grid[i][2] and grid[i][0] != 0 and grid[i][1] == 0:
 			if grid[i][0] == 1: priority1[(i * 3) + 2] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[(i * 3) + 2] = 1
 		#right
 		if grid[i][0] == grid[i][1] and grid[i][0] != 0 and grid[i][2] == 0:
 			if grid[i][0] == 1: priority1[(i * 3) + 3] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[(i * 3) + 3] = 1
 	
 	#columns
 	for i in range(3):
@@ -139,7 +139,7 @@ func computer_turn():
 		else: priority2[1] = 1
 	if grid[0][0] == grid[2][2] and grid[0][0] != 0 and grid[1][1] == 0:
 		if grid[0][0] == 1: priority1[5] = 1
-		else: priority2[0] = 1
+		else: priority2[5] = 1
 	if grid[0][0] == grid[1][1] and grid[0][0] != 0 and grid[2][2] == 0:
 		if grid[0][0] == 1: priority1[9] = 1
 		else: priority2[9] = 1
@@ -163,54 +163,55 @@ func computer_turn():
 	
 	#win
 	if win_spots.size() != 0:
-		id = win_spots[0]
+		id = win_spots.pick_random()
 		buttons[id - 1].computer()
 		turn(id)
-		print("id: " + str(id) + " win_spots: " + str(win_spots))
 		return
 	
 	#auto
 	if auto:
-		id = block_spots[0]
+		id = block_spots[0] #in theory there should only be 1 block spot during auto
 		buttons[id - 1].computer()
 		turn(id)
-		print("id: " + str(id) + " block_spots: " + str(block_spots))
 		return
 	
-	print("cases: " + str(cases) + " moves1: " + str(moves1) + " moves2: " + str(moves2))
 	match cases.size():
 		0: #first move
 			cases.append(0)
 			id = corners.pick_random()
 		1: #second move
 			if moves1.back() in center: #center
-				cases.append(0)
 				id = opposite_corners[moves2.back()]
 				auto = true
-			elif moves1.back() in corners: #corner
-				#determine opposite corner
-				var opp
-				id = opposite_corners[moves2.back()]
-				if moves1.back() == opp: #opposite
-					cases.append(1)
+			elif moves1.back() in corners: #corners
+				cases.append(0)
+				if moves1.back() == opposite_corners[moves2.back()]: #opposite
 					#choose empty corner
 					var empty = corners
 					corners.erase(moves1.back())
 					corners.erase(moves2.back())
 					id = empty.pick_random()
 				else: #spaced
-					cases.append(2)
 					#place in opposite corner
 					id = opposite_corners[moves2.back()]
 			elif moves1.back() in sides: #side
 				#place in corner not adjacent to player's previous move
 				for i in range(2):
-					if moves1.back() not in spaced_corners[moves2.back()][i]:
+					if moves1.back() not in adjacent_sides[spaced_corners[moves2.back()][i]]:
 						id = spaced_corners[moves2.back()][i]
 				if moves1.back() not in adjacent_sides[moves2.back()]: #not adjacent
-					cases.append(3)
 					auto = true
-				else: cases.append(4)
+				else: cases.append(1)
+		2: #third move:
+			match cases.back():
+				0: #corners: place in remaining corner
+					for i in corners:
+						if buttons[i - 1].blank:
+							id = i
+							auto = true
+				1: #adjacent side: place in opposite corner
+					id = opposite_corners[moves2[-2]]
+					auto = true
 	
 	buttons[id - 1].computer()
 	turn(id)
