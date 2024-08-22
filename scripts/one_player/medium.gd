@@ -95,35 +95,35 @@ func computer_turn():
 		#top
 		if grid[1][i] == grid[2][i] and grid[1][i] != 0 and grid[0][i] == 0:
 			if grid[1][i] == 1: priority1[i + 1] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[i + 1] = 1
 		#middle
 		if grid[0][i] == grid[2][i] and grid[0][i] != 0 and grid[1][i] == 0:
 			if grid[0][i] == 1: priority1[i + 4] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[i + 4] = 1
 		#right
 		if grid[0][i] == grid[1][i] and grid[0][i] != 0 and grid[2][i] == 0:
 			if grid[0][i] == 1: priority1[i + 7] = 1
-			else: priority2[(i * 3) + 1] = 1
+			else: priority2[i + 7] = 1
 	
 	#diagonals
 	if grid[1][1] == grid[2][2] and grid[1][1] != 0 and grid[0][0] == 0:
 		if grid[1][1] == 1: priority1[1] = 1
-		else: priority1[1] = 1
+		else: priority2[1] = 1
 	if grid[0][0] == grid[2][2] and grid[0][0] != 0 and grid[1][1] == 0:
 		if grid[0][0] == 1: priority1[5] = 1
-		else: priority1[0] = 1
+		else: priority2[0] = 1
 	if grid[0][0] == grid[1][1] and grid[0][0] != 0 and grid[2][2] == 0:
 		if grid[0][0] == 1: priority1[9] = 1
-		else: priority1[9] = 1
+		else: priority2[9] = 1
 	if grid[1][1] == grid[2][0] and grid[1][1] != 0 and grid[0][2] == 0:
 		if grid[1][1] == 1: priority1[3] = 1
-		else: priority1[3] = 1
+		else: priority2[3] = 1
 	if grid[0][2] == grid[2][0] and grid[0][2] != 0 and grid[1][1] == 0:
 		if grid[0][2] == 1: priority1[5] = 1
-		else: priority1[5] = 1
+		else: priority2[5] = 1
 	if grid[0][2] == grid[1][1] and grid[0][2] != 0 and grid[2][0] == 0:
 		if grid[0][2] == 1: priority1[7] = 1
-		else: priority1[7] = 1
+		else: priority2[7] = 1
 	
 	var win_spots = []
 	var block_spots = []

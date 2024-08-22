@@ -39,3 +39,4 @@ func load_scene(scene : String):
 		"easy": get_tree().change_scene_to_file("res://scenes/one_player/Easy.tscn")
 		"medium": get_tree().change_scene_to_file("res://scenes/one_player/Medium.tscn")
 		"hard": get_tree().change_scene_to_file("res://scenes/one_player/Hard.tscn")
+		"impossible": get_tree().change_scene_to_file("res://scenes/one_player/Impossible.tscn")
