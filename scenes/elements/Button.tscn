@@ -15,7 +15,7 @@ texture = ExtResource("2_ksiw2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73m6p"]
 texture = ExtResource("1_aw4u1")
 
-[node name="Button" type="Button" groups=["button"]]
+[node name="Button" type="Button" groups=["button", "ui_button"]]
 offset_right = 128.0
 offset_bottom = 128.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_wq7t1")

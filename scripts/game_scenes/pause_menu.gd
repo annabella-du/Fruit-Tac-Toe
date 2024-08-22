@@ -4,9 +4,6 @@ extends Control
 @onready var anim = $AnimationPlayer
 @onready var ui_buttons = get_tree().get_nodes_in_group("ui_button")
 
-func _process(_delta):
-	testEsc()
-
 func _ready():
 	anim.play("RESET")
 
@@ -14,14 +11,12 @@ func resume():
 	get_tree().paused = false
 	anim.play_backwards("blur")
 	for button in ui_buttons:
-		button.disabled = false
 		button.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func pause():
 	get_tree().paused = true
 	anim.play("blur")
 	for button in ui_buttons:
-		button.disabled = true
 		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func testEsc():

@@ -1,11 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dtqm81ysfyftk"]
+[gd_scene load_steps=21 format=3 uid="uid://dtqm81ysfyftk"]
 
 [ext_resource type="Script" path="res://scripts/game_scenes/main_menu.gd" id="1_ahvd6"]
 [ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/custom/title.png" id="2_ovaja"]
 [ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_xmicl"]
 [ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="4_u5vaq"]
 [ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="5_t2tpa"]
-[ext_resource type="PackedScene" uid="uid://csarsjrpt7ktt" path="res://scenes/game_scenes/PauseMenu.tscn" id="6_f0p85"]
 [ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="6_hkanb"]
 [ext_resource type="PackedScene" uid="uid://hso40ait3uh7" path="res://scenes/elements/TextureRect.tscn" id="7_2bwbi"]
 [ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="8_1n777"]
@@ -27,8 +26,6 @@ process_mode = 1
 script = ExtResource("1_ahvd6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_f0p85")]
 
 [node name="TitleTexture" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -69,6 +66,7 @@ offset_left = 448.0
 offset_top = 528.0
 offset_right = 832.0
 offset_bottom = 608.0
+mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
@@ -97,6 +95,7 @@ offset_left = 448.0
 offset_top = 416.0
 offset_right = 832.0
 offset_bottom = 496.0
+mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
@@ -125,6 +124,7 @@ offset_left = 448.0
 offset_top = 304.0
 offset_right = 832.0
 offset_bottom = 384.0
+mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
@@ -148,189 +148,244 @@ text = "Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="Decoration" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="TextureRect" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 872.0
 offset_top = 272.0
 offset_right = 944.0
 offset_bottom = 344.0
+mouse_filter = 2
 texture = ExtResource("8_1n777")
 
-[node name="TextureRect2" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect2" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 296.0
 offset_top = 32.0
 offset_right = 368.0
 offset_bottom = 104.0
+mouse_filter = 2
 texture = ExtResource("9_28u8o")
 
-[node name="TextureRect3" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect3" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 632.0
 offset_top = 40.0
 offset_right = 704.0
 offset_bottom = 112.0
+mouse_filter = 2
 texture = ExtResource("10_ijm1p")
 
-[node name="TextureRect4" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect4" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 80.0
 offset_top = 208.0
 offset_right = 152.0
 offset_bottom = 280.0
+mouse_filter = 2
 texture = ExtResource("11_m4uvy")
 
-[node name="TextureRect5" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect5" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1056.0
 offset_top = 512.0
 offset_right = 1128.0
 offset_bottom = 584.0
+mouse_filter = 2
 texture = ExtResource("12_x35jr")
 
-[node name="TextureRect6" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect6" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 248.0
 offset_top = 576.0
 offset_right = 320.0
 offset_bottom = 648.0
+mouse_filter = 2
 texture = ExtResource("13_tqeyt")
 
-[node name="TextureRect7" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect7" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1184.0
 offset_top = 104.0
 offset_right = 1256.0
 offset_bottom = 176.0
+mouse_filter = 2
 texture = ExtResource("14_07tpa")
 
-[node name="TextureRect8" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect8" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 920.0
 offset_top = 40.0
 offset_right = 992.0
 offset_bottom = 112.0
+mouse_filter = 2
 texture = ExtResource("15_6hbnd")
 
-[node name="TextureRect9" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect9" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 200.0
 offset_top = 272.0
 offset_right = 272.0
 offset_bottom = 344.0
+mouse_filter = 2
 texture = ExtResource("16_pgq0y")
 
-[node name="TextureRect10" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect10" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 888.0
 offset_top = 592.0
 offset_right = 960.0
 offset_bottom = 664.0
+mouse_filter = 2
 texture = ExtResource("17_msm5w")
 
-[node name="TextureRect11" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect11" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 56.0
 offset_top = 376.0
 offset_right = 128.0
 offset_bottom = 448.0
+mouse_filter = 2
 texture = ExtResource("18_xa8fh")
 
-[node name="TextureRect12" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect12" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 16.0
 offset_right = 200.0
 offset_bottom = 88.0
+mouse_filter = 2
 texture = ExtResource("19_ww5bt")
 
-[node name="TextureRect13" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect13" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1088.0
 offset_top = 32.0
 offset_right = 1160.0
 offset_bottom = 104.0
+mouse_filter = 2
 texture = ExtResource("20_gkv7g")
 
-[node name="TextureRect14" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect14" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 600.0
 offset_right = 120.0
 offset_bottom = 672.0
+mouse_filter = 2
 texture = ExtResource("8_1n777")
 
-[node name="TextureRect15" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect15" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 632.0
 offset_right = 512.0
 offset_bottom = 704.0
+mouse_filter = 2
 texture = ExtResource("9_28u8o")
 
-[node name="TextureRect16" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect16" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1160.0
 offset_top = 240.0
 offset_right = 1232.0
 offset_bottom = 312.0
+mouse_filter = 2
 texture = ExtResource("10_ijm1p")
 
-[node name="TextureRect17" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect17" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1152.0
 offset_top = 600.0
 offset_right = 1224.0
 offset_bottom = 672.0
+mouse_filter = 2
 texture = ExtResource("11_m4uvy")
 
-[node name="TextureRect18" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect18" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 88.0
 offset_right = 104.0
 offset_bottom = 160.0
+mouse_filter = 2
 texture = ExtResource("12_x35jr")
 
-[node name="TextureRect19" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect19" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1016.0
 offset_top = 312.0
 offset_right = 1088.0
 offset_bottom = 384.0
+mouse_filter = 2
 texture = ExtResource("13_tqeyt")
 
-[node name="TextureRect20" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect20" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 656.0
 offset_top = 632.0
 offset_right = 728.0
 offset_bottom = 704.0
+mouse_filter = 2
 texture = ExtResource("14_07tpa")
 
-[node name="TextureRect21" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect21" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 232.0
 offset_top = 432.0
 offset_right = 304.0
 offset_bottom = 504.0
+mouse_filter = 2
 texture = ExtResource("15_6hbnd")
 
-[node name="TextureRect22" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect22" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 784.0
 offset_top = 24.0
 offset_right = 856.0
 offset_bottom = 96.0
+mouse_filter = 2
 texture = ExtResource("16_pgq0y")
 
-[node name="TextureRect23" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect23" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 488.0
 offset_top = 8.0
 offset_right = 560.0
 offset_bottom = 80.0
+mouse_filter = 2
 texture = ExtResource("17_msm5w")
 
-[node name="TextureRect24" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect24" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 1160.0
 offset_top = 408.0
 offset_right = 1232.0
 offset_bottom = 480.0
+mouse_filter = 2
 texture = ExtResource("18_xa8fh")
 
-[node name="TextureRect25" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect25" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 928.0
 offset_top = 440.0
 offset_right = 1000.0
 offset_bottom = 512.0
+mouse_filter = 2
 texture = ExtResource("19_ww5bt")
 
-[node name="TextureRect26" parent="CanvasLayer" instance=ExtResource("7_2bwbi")]
+[node name="TextureRect26" parent="CanvasLayer/Decoration" instance=ExtResource("7_2bwbi")]
+layout_mode = 0
 offset_left = 344.0
 offset_top = 336.0
 offset_right = 416.0
 offset_bottom = 408.0
+mouse_filter = 2
 texture = ExtResource("20_gkv7g")
-
-[node name="Decoration" type="Node2D" parent="CanvasLayer"]
 
 [node name="ClickSFX" parent="." instance=ExtResource("6_hkanb")]
 

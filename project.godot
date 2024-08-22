@@ -30,6 +30,9 @@ window/stretch/mode="canvas_items"
 [global_group]
 
 ui_button=""
+button=""
+pause_menu=""
+display=""
 
 [input]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://sdt7fdu21pch"]
+[gd_scene load_steps=10 format=3 uid="uid://sdt7fdu21pch"]
 
 [ext_resource type="Script" path="res://scripts/two_players/2p.gd" id="1_0xeml"]
+[ext_resource type="PackedScene" uid="uid://dpnco74ks0jf4" path="res://scenes/elements/PauseButton.tscn" id="2_kmsu2"]
 [ext_resource type="Texture2D" uid="uid://cx1yx7tdk3weh" path="res://assets/custom/grid.png" id="2_omity"]
 [ext_resource type="PackedScene" uid="uid://bj6w5j6p333c2" path="res://scenes/elements/Button.tscn" id="3_3ixna"]
+[ext_resource type="PackedScene" uid="uid://csarsjrpt7ktt" path="res://scenes/elements/PauseMenu.tscn" id="3_wvbwj"]
 [ext_resource type="PackedScene" uid="uid://cumayu6wflwrj" path="res://scenes/elements/Display.tscn" id="4_gdlp3"]
 [ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="5_r3e34"]
 [ext_resource type="PackedScene" uid="uid://dxvwv1jj8al0j" path="res://scenes/elements/SFX/LoseSFX.tscn" id="6_445a8"]
@@ -13,6 +15,14 @@ script = ExtResource("1_0xeml")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
+
+[node name="PauseButton" parent="CanvasLayer" instance=ExtResource("2_kmsu2")]
+offset_left = 1168.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 112.0
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_wvbwj")]
 
 [node name="Grid" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
