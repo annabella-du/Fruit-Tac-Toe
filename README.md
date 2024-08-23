@@ -11,5 +11,3 @@ Discord: jellybean729
 itch.io: https://jellybean27.itch.io/
 
 Hack Club Slack ID: U078VG9JDH9
-
-This is a WIP!!

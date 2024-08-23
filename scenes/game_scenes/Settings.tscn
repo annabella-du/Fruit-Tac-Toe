@@ -1,0 +1,232 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd04bkdpm3gdd"]
+
+[ext_resource type="Script" path="res://scripts/game_scenes/settings.gd" id="1_hr1mx"]
+[ext_resource type="Texture2D" uid="uid://cuekmg8tcxmai" path="res://assets/custom/title.png" id="2_avmqv"]
+[ext_resource type="FontFile" uid="uid://5fk2jgxpgoai" path="res://assets/font.TTF" id="3_r70tu"]
+[ext_resource type="Texture2D" uid="uid://bkgld075rcyo2" path="res://assets/custom/option_square.png" id="4_2wgd6"]
+[ext_resource type="Texture2D" uid="uid://bd48rj7upm0nr" path="res://assets/custom/option_sqaure_hover.png" id="5_gu1ev"]
+[ext_resource type="Texture2D" uid="uid://cmgy4pbshqiwl" path="res://assets/custom/option.png" id="6_3c8ki"]
+[ext_resource type="Texture2D" uid="uid://ca2ag78vxqjdm" path="res://assets/fruits/01.png" id="6_hljtl"]
+[ext_resource type="PackedScene" uid="uid://bnshghfrh88fr" path="res://scenes/elements/SFX/ClickSFX.tscn" id="7_ogae6"]
+[ext_resource type="Texture2D" uid="uid://buqn4goa5jjdr" path="res://assets/fruits/07.png" id="8_f1llp"]
+[ext_resource type="Texture2D" uid="uid://lpdb21o1v6rr" path="res://assets/fruits/13.png" id="9_vp7ta"]
+[ext_resource type="Texture2D" uid="uid://433icknjgfmh" path="res://assets/custom/option_hover.png" id="10_3gojb"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_hr1mx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_avmqv")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r70tu")
+theme_override_font_sizes/font_size = 73
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="AudioButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/AudioContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_2wgd6")
+texture_pressed = ExtResource("5_gu1ev")
+texture_hover = ExtResource("5_gu1ev")
+
+[node name="AudioTexture" type="TextureRect" parent="CanvasLayer/VBoxContainer/AudioContainer/AudioButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_hljtl")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/AudioContainer"]
+layout_mode = 2
+texture = ExtResource("6_3c8ki")
+
+[node name="AudioLabel" type="Label" parent="CanvasLayer/VBoxContainer/AudioContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -16.5
+offset_right = 115.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r70tu")
+theme_override_font_sizes/font_size = 32
+text = "All Audio"
+
+[node name="MusicContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="MusicButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_2wgd6")
+texture_pressed = ExtResource("5_gu1ev")
+texture_hover = ExtResource("5_gu1ev")
+
+[node name="MusicTexture" type="TextureRect" parent="CanvasLayer/VBoxContainer/MusicContainer/MusicButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_f1llp")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+texture = ExtResource("6_3c8ki")
+
+[node name="MusicLabel" type="Label" parent="CanvasLayer/VBoxContainer/MusicContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -11.5
+offset_right = 105.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r70tu")
+theme_override_font_sizes/font_size = 32
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="SFXButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_2wgd6")
+texture_pressed = ExtResource("5_gu1ev")
+texture_hover = ExtResource("5_gu1ev")
+
+[node name="SFXTexture" type="TextureRect" parent="CanvasLayer/VBoxContainer/SFXContainer/SFXButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_vp7ta")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer/SFXContainer"]
+layout_mode = 2
+texture = ExtResource("6_3c8ki")
+
+[node name="SFXLabel" type="Label" parent="CanvasLayer/VBoxContainer/SFXContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r70tu")
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_3c8ki")
+texture_pressed = ExtResource("10_3gojb")
+texture_hover = ExtResource("10_3gojb")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/ContinueButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.5
+offset_right = 20.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_r70tu")
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+
+[node name="ClickSFX" parent="." instance=ExtResource("7_ogae6")]
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/AudioContainer/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/MusicContainer/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SFXContainer/SFXButton" to="." method="_on_sfx_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

@@ -17,5 +17,9 @@ func _on_play_button_pressed() -> void:
 	next_scene = "select_mode"
 	click_sfx.play()
 
+func _on_settings_button_pressed() -> void:
+	next_scene = "settings"
+	click_sfx.play()
+
 func _on_click_sfx_finished() -> void:
 	global.load_scene(next_scene)

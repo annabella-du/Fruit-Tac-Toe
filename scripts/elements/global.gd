@@ -31,6 +31,7 @@ func load_scene(scene : String):
 		"main_menu": get_tree().change_scene_to_file("res://scenes/game_scenes/MainMenu.tscn")
 		"credits": get_tree().change_scene_to_file("res://scenes/game_scenes/Credits.tscn")
 		"instructions": get_tree().change_scene_to_file("res://scenes/game_scenes/Instructions.tscn")
+		"settings": get_tree().change_scene_to_file("res://scenes/game_scenes/Settings.tscn")
 		"select_mode": get_tree().change_scene_to_file("res://scenes/game_scenes/SelectMode.tscn")
 		"game_over": get_tree().change_scene_to_file("res://scenes/game_scenes/GameOver.tscn")
 		"1select_icon" : get_tree().change_scene_to_file("res://scenes/one_player/1SelectIcon.tscn")
