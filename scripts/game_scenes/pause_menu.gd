@@ -1,37 +1,43 @@
-extends Control
+extends CanvasLayer
 
 @onready var global = get_node("/root/global")
 @onready var anim = $AnimationPlayer
 @onready var ui_buttons = get_tree().get_nodes_in_group("ui_button")
+@onready var click_sfx: AudioStreamPlayer2D = $ClickSFX
+
+var button : String
 
 func _ready():
 	anim.play("RESET")
+	layer = 0
 
 func resume():
 	get_tree().paused = false
 	anim.play_backwards("blur")
-	for button in ui_buttons:
-		button.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func pause():
 	get_tree().paused = true
+	layer = 2
 	anim.play("blur")
-	for button in ui_buttons:
-		button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-
-func testEsc():
-	if Input.is_action_just_pressed("esc") and !get_tree().paused:
-		pause()
-	elif Input.is_action_just_pressed("esc") and get_tree().paused:
-		resume()
 
 func _on_resume_button_pressed() -> void:
-	resume()
+	button = "resume"
+	click_sfx.play()
 
 func _on_restart_button_pressed() -> void:
-	resume()
-	get_tree().reload_current_scene()
+	button = "restart"
+	click_sfx.play()
 
 func _on_main_menu_button_pressed() -> void:
+	button = "main_menu"
+	click_sfx.play()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "blur" and !get_tree().paused:
+		layer = 0
+
+func _on_click_sfx_finished() -> void:
 	resume()
-	global.load_scene("main_menu")
+	match button:
+		"restart": get_tree().reload_current_scene()
+		"main_menu": global.load_scene("main_menu")

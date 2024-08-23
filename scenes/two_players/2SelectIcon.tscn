@@ -27,6 +27,9 @@
 [node name="2SelectIcon" type="Node2D"]
 script = ExtResource("1_1m6ll")
 
+[node name="PauseMenu" parent="." instance=ExtResource("3_3tbjf")]
+metadata/_edit_use_anchors_ = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseButton" parent="CanvasLayer" instance=ExtResource("2_hgtna")]
@@ -35,8 +38,6 @@ offset_top = 64.0
 offset_right = 1216.0
 offset_bottom = 112.0
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_3tbjf")]
-
 [node name="Player1Texture" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true
 z_index = 1
@@ -44,7 +45,6 @@ offset_left = 552.0
 offset_top = 48.0
 offset_right = 624.0
 offset_bottom = 120.0
-mouse_filter = 2
 
 [node name="Player2Texture" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -53,7 +53,6 @@ offset_left = 656.0
 offset_top = 48.0
 offset_right = 728.0
 offset_bottom = 120.0
-mouse_filter = 2
 
 [node name="ContinueButton" type="TextureButton" parent="CanvasLayer" groups=["ui_button"]]
 anchors_preset = 7
@@ -67,6 +66,7 @@ offset_right = 192.0
 offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 texture_normal = ExtResource("2_jpxkd")
 texture_pressed = ExtResource("3_phlqj")
 texture_hover = ExtResource("3_phlqj")
@@ -84,6 +84,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_fonts/font = ExtResource("4_cli3f")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
@@ -102,17 +103,16 @@ offset_right = 248.0
 offset_bottom = 148.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-mouse_filter = 2
 alignment = 1
 
 [node name="BlueberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -131,12 +131,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("7_iwcev")
 
 [node name="PearButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -155,12 +155,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("8_8n0gq")
 
 [node name="CherryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -179,12 +179,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("9_6ouwq")
 
 [node name="BananaButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -203,12 +203,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("10_38mja")
 
 [node name="RedAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -227,17 +227,16 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("11_jdet2")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-mouse_filter = 2
 alignment = 1
 
 [node name="PomegranateButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -256,12 +255,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("12_dfid7")
 
 [node name="StrawberryButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -280,12 +279,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("13_sderp")
 
 [node name="OrangeButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -304,12 +303,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("14_ma8wi")
 
 [node name="PeachButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -328,12 +327,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("15_p0us3")
 
 [node name="CoconutButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer2" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -352,17 +351,16 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("16_p1c0t")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-mouse_filter = 2
 alignment = 1
 
 [node name="KiwiButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -381,12 +379,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("17_hn20v")
 
 [node name="LemonButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -405,12 +403,12 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("18_j7bg8")
 
 [node name="GreenAppleButton" type="TextureButton" parent="CanvasLayer/VBoxContainer/HBoxContainer3" groups=["ui_button"]]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
+mouse_filter = 1
 texture_normal = ExtResource("5_q01g5")
 texture_pressed = ExtResource("6_bx16k")
 texture_hover = ExtResource("6_bx16k")
@@ -429,7 +427,6 @@ offset_right = 36.0
 offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 texture = ExtResource("19_rh0bx")
 
 [node name="DisplaySprite" type="Sprite2D" parent="CanvasLayer"]

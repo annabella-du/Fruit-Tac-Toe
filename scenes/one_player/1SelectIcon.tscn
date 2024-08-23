@@ -27,6 +27,8 @@
 [node name="OnePlayerSelectIcon" type="Node2D"]
 script = ExtResource("1_wdkfw")
 
+[node name="PauseMenu" parent="." instance=ExtResource("3_n7eje")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseButton" parent="CanvasLayer" instance=ExtResource("2_h8tbm")]
@@ -34,8 +36,6 @@ offset_left = 1168.0
 offset_top = 64.0
 offset_right = 1216.0
 offset_bottom = 112.0
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_n7eje")]
 
 [node name="Player1Texture" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true

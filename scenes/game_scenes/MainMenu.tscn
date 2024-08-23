@@ -27,22 +27,27 @@ script = ExtResource("1_ahvd6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TitleTexture" type="TextureRect" parent="CanvasLayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -452.0
-offset_top = -232.0
+offset_top = -264.0
 offset_right = 452.0
-offset_bottom = -120.0
+offset_bottom = 264.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleTexture" type="TextureRect" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("2_ovaja")
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/TitleTexture"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/VBoxContainer/TitleTexture"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,17 +66,15 @@ text = "Fruit-Tac-Toe"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InstructionsButton" type="TextureButton" parent="CanvasLayer" groups=["ui_button"]]
-offset_left = 448.0
-offset_top = 528.0
-offset_right = 832.0
-offset_bottom = 608.0
+[node name="InstructionsButton" type="TextureButton" parent="CanvasLayer/VBoxContainer" groups=["ui_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
 mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
 
-[node name="InstructionsLabel" type="Label" parent="CanvasLayer/InstructionsButton"]
+[node name="InstructionsLabel" type="Label" parent="CanvasLayer/VBoxContainer/InstructionsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -90,17 +93,15 @@ text = "Instructions"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CreditsButton" type="TextureButton" parent="CanvasLayer" groups=["ui_button"]]
-offset_left = 448.0
-offset_top = 416.0
-offset_right = 832.0
-offset_bottom = 496.0
+[node name="CreditsButton" type="TextureButton" parent="CanvasLayer/VBoxContainer" groups=["ui_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
 mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
 
-[node name="CreditsLabel" type="Label" parent="CanvasLayer/CreditsButton"]
+[node name="CreditsLabel" type="Label" parent="CanvasLayer/VBoxContainer/CreditsButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -119,17 +120,15 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlayButton" type="TextureButton" parent="CanvasLayer" groups=["ui_button"]]
-offset_left = 448.0
-offset_top = 304.0
-offset_right = 832.0
-offset_bottom = 384.0
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/VBoxContainer" groups=["ui_button"]]
+layout_mode = 2
+size_flags_horizontal = 4
 mouse_filter = 1
 texture_normal = ExtResource("4_u5vaq")
 texture_pressed = ExtResource("5_t2tpa")
 texture_hover = ExtResource("5_t2tpa")
 
-[node name="Label" type="Label" parent="CanvasLayer/PlayButton"]
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/PlayButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -145,6 +144,32 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_xmicl")
 theme_override_font_sizes/font_size = 32
 text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("4_u5vaq")
+texture_pressed = ExtResource("5_t2tpa")
+texture_hover = ExtResource("5_t2tpa")
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_xmicl")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -389,7 +414,7 @@ texture = ExtResource("20_gkv7g")
 
 [node name="ClickSFX" parent="." instance=ExtResource("6_hkanb")]
 
-[connection signal="pressed" from="CanvasLayer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/InstructionsButton" to="." method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="finished" from="ClickSFX" to="." method="_on_click_sfx_finished"]

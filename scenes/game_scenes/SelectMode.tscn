@@ -12,9 +12,9 @@
 [node name="SelectMode" type="Node2D"]
 script = ExtResource("1_jpkln")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PauseMenu" parent="." instance=ExtResource("2_4ehx1")]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_4ehx1")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseButton" parent="CanvasLayer" instance=ExtResource("3_qbima")]
 offset_left = 1168.0
@@ -204,6 +204,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ClickSFX" parent="." instance=ExtResource("6_inywi")]
+unique_name_in_owner = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/TPButton" to="." method="_on_tp_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/HBoxContainer/EasyButton" to="." method="_on_easy_button_pressed"]
